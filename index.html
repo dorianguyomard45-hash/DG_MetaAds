@@ -960,41 +960,38 @@ footer strong { color: rgba(255,255,255,0.75); }
       </div>
 
       <div class="form-box reveal d2">
-        <!-- Netlify Forms — soumission directe -->
-        <form class="form" name="contact" method="POST" action="/DG_MetaAds/merci.html" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
-          <p style="display:none"><input name="bot-field"></p>
+        <form class="form" id="contact-form" onsubmit="sendMail(event)">
           <div class="form-row">
             <div class="fg">
               <label>Prénom *</label>
-              <input type="text" name="prenom" placeholder="Jean" required>
+              <input type="text" id="prenom" placeholder="Jean" required>
             </div>
             <div class="fg">
               <label>Nom *</label>
-              <input type="text" name="nom" placeholder="Dupont" required>
+              <input type="text" id="nom" placeholder="Dupont" required>
             </div>
           </div>
           <div class="fg">
             <label>Email *</label>
-            <input type="email" name="email" placeholder="jean@entreprise.com" required>
+            <input type="email" id="email" placeholder="jean@entreprise.com" required>
           </div>
           <div class="fg">
             <label>Votre entreprise</label>
-            <input type="text" name="entreprise" placeholder="Mon Entreprise">
+            <input type="text" id="entreprise" placeholder="Mon Entreprise">
           </div>
           <div class="fg">
             <label>Objet de la demande</label>
-            <select name="objet">
+            <select id="objet">
               <option value="">Sélectionner...</option>
-              <option value="audit">Audit gratuit de mes campagnes</option>
-              <option value="gestion">Gestion de campagnes Meta Ads</option>
-              <option value="strategie">Stratégie & conseil</option>
-              <option value="autre">Autre</option>
+              <option value="Audit gratuit de mes campagnes">Audit gratuit de mes campagnes</option>
+              <option value="Gestion de campagnes Meta Ads">Gestion de campagnes Meta Ads</option>
+              <option value="Stratégie et conseil">Stratégie et conseil</option>
+              <option value="Autre">Autre</option>
             </select>
           </div>
           <div class="fg">
             <label>Message *</label>
-            <textarea name="message" placeholder="Décrivez votre projet, objectifs, budget pub mensuel..." required></textarea>
+            <textarea id="message" placeholder="Décrivez votre projet, objectifs, budget pub mensuel..." required></textarea>
           </div>
           <button type="submit" class="btn-send">Envoyer ma demande →</button>
           <p class="form-note-small">Je réponds sous 24h. Aucun engagement.</p>
@@ -1032,6 +1029,26 @@ footer strong { color: rgba(255,255,255,0.75); }
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
+  }
+
+  function sendMail(e) {
+    e.preventDefault();
+    const prenom   = document.getElementById('prenom').value;
+    const nom      = document.getElementById('nom').value;
+    const email    = document.getElementById('email').value;
+    const entreprise = document.getElementById('entreprise').value;
+    const objet    = document.getElementById('objet').value;
+    const message  = document.getElementById('message').value;
+    const sujet    = encodeURIComponent('Demande via DG.Meta — ' + (objet || 'Contact'));
+    const corps    = encodeURIComponent(
+      'Prénom : ' + prenom + '\n' +
+      'Nom : ' + nom + '\n' +
+      'Email : ' + email + '\n' +
+      'Entreprise : ' + entreprise + '\n' +
+      'Objet : ' + objet + '\n\n' +
+      'Message :\n' + message
+    );
+    window.location.href = 'mailto:dorian.guyomard45@gmail.com?subject=' + sujet + '&body=' + corps;
   }
 </script>
 
