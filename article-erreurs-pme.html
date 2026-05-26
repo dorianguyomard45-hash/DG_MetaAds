@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 erreurs que font les PME sur Meta Ads — Dorian Guyomard</title>
+<meta name="description" content="Facebook Ads, Instagram Ads : les 3 erreurs les plus courantes des PME et comment les éviter pour maximiser leur retour sur investissement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --cream:#F7F6F2; --white:#FFFFFF; --ink:#0C0C14; --ink-60:rgba(12,12,20,0.55);
+  --blue:#1877F2; --blue-10:rgba(24,119,242,0.09); --gold:#F5A623;
+  --border:rgba(12,12,20,0.1);
+  --font-d:'Syne',sans-serif; --font-b:'DM Sans',sans-serif;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--ink); font-family:var(--font-b); font-size:16px; line-height:1.7; overflow-x:hidden; }
+::-webkit-scrollbar { width:3px; } ::-webkit-scrollbar-thumb { background:var(--blue); }
+
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.1rem 5vw;
+  background:rgba(247,246,242,0.9); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.logo { font-family:var(--font-d); font-weight:800; font-size:1.05rem; color:var(--ink); text-decoration:none; }
+.logo .dot { color:var(--blue); }
+nav ul { display:flex; gap:2rem; list-style:none; }
+nav a { color:var(--ink-60); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.2s; }
+nav a:hover { color:var(--ink); }
+.nav-cta { background:var(--blue) !important; color:#fff !important; padding:0.55rem 1.3rem; border-radius:100px; font-weight:600; }
+
+/* HERO ARTICLE */
+.article-hero {
+  padding: 9rem 5vw 4rem;
+  max-width: 760px;
+  margin: 0 auto;
+  animation: fadeUp 0.8s var(--ease) both;
+}
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+
+.breadcrumb {
+  display:flex; align-items:center; gap:0.5rem;
+  font-size:0.75rem; color:var(--ink-60); margin-bottom:1.5rem;
+}
+.breadcrumb a { color:var(--blue); text-decoration:none; font-weight:600; }
+.breadcrumb span { color:var(--ink-60); }
+
+.article-label {
+  display:inline-flex; align-items:center; gap:0.45rem;
+  background:var(--blue-10); border:1px solid rgba(24,119,242,0.2);
+  color:var(--blue); font-size:0.72rem; font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase;
+  padding:0.3rem 0.85rem; border-radius:100px; margin-bottom:1.2rem;
+}
+
+h1 {
+  font-family:var(--font-d);
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:800; line-height:1.08; letter-spacing:-0.02em;
+  margin-bottom:1.2rem;
+}
+h1 span { color:var(--blue); }
+
+.article-meta {
+  display:flex; align-items:center; gap:1.5rem;
+  font-size:0.78rem; color:var(--ink-60);
+  padding:1rem 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  margin-bottom:3rem;
+  flex-wrap:wrap;
+}
+.meta-item { display:flex; align-items:center; gap:0.4rem; }
+
+/* ARTICLE BODY */
+.article-body { max-width:760px; margin:0 auto; padding:0 5vw; }
+
+.article-body p {
+  font-size:0.97rem; color:var(--ink-60); line-height:1.85; margin-bottom:1.4rem;
+}
+
+.article-body strong { color:var(--ink); font-weight:600; }
+
+/* ERROR BLOCK */
+.error-block {
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2rem 2.2rem;
+  margin:2.5rem 0;
+  position:relative;
+  overflow:hidden;
+}
+.error-block::before {
+  content:'';
+  position:absolute; top:0; left:0; bottom:0; width:3px;
+  background:var(--blue);
+}
+.error-num {
+  font-size:0.7rem; font-weight:800; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--blue); margin-bottom:0.6rem;
+}
+.error-block h2 {
+  font-family:var(--font-d);
+  font-size:1.2rem; font-weight:800; margin-bottom:1rem; line-height:1.2;
+}
+.error-block p { margin-bottom:0.8rem; }
+.error-block p:last-child { margin-bottom:0; }
+
+.tip-box {
+  background:rgba(24,119,242,0.06);
+  border:1px solid rgba(24,119,242,0.2);
+  border-radius:10px;
+  padding:1rem 1.2rem;
+  margin-top:1rem;
+  font-size:0.85rem;
+  color:var(--ink);
+}
+.tip-box strong { color:var(--blue); }
+
+/* QUOTE */
+.pull-quote {
+  border-left:3px solid var(--gold);
+  padding:1rem 1.5rem;
+  margin:2rem 0;
+  background:rgba(245,166,35,0.05);
+  border-radius:0 10px 10px 0;
+  font-size:1.05rem;
+  font-style:italic;
+  color:var(--ink);
+  line-height:1.7;
+}
+
+/* CTA ARTICLE */
+.article-cta {
+  background:var(--ink);
+  border-radius:16px;
+  padding:2.5rem;
+  text-align:center;
+  margin:3rem 0 5rem;
+}
+.article-cta h3 { font-family:var(--font-d); font-size:1.4rem; font-weight:800; color:#fff; margin-bottom:0.7rem; }
+.article-cta p { font-size:0.875rem; color:rgba(255,255,255,0.5); margin-bottom:1.5rem; }
+.btn-cta {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  background:var(--blue); color:#fff; padding:0.9rem 2rem;
+  border-radius:100px; text-decoration:none; font-weight:600; font-size:0.9rem;
+  transition:all 0.2s var(--ease);
+}
+.btn-cta:hover { background:#1469d6; transform:translateY(-2px); box-shadow:0 8px 24px rgba(24,119,242,0.3); }
+
+footer { background:var(--ink); padding:2rem 5vw; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
+.f-links { display:flex; gap:2rem; }
+.f-links a { font-size:0.78rem; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.2s; }
+.f-links a:hover { color:#fff; }
+
+@media(max-width:640px) { nav ul { display:none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">DG<span class="dot">.</span>META</a>
+  <ul>
+    <li><a href="/">Accueil</a></li>
+    <li><a href="/a-propos.html">Qui je suis</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#contact" class="nav-cta">Me contacter</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumb">
+    <a href="/">Accueil</a>
+    <span>›</span>
+    <span>Blog</span>
+    <span>›</span>
+    <span>3 erreurs classiques des PME sur Meta Ads</span>
+  </div>
+  <div class="article-label">Meta Ads · Conseils</div>
+  <h1>3 erreurs que font les PME sur <span>Meta Ads</span> (et comment les éviter)</h1>
+  <div class="article-meta">
+    <div class="meta-item">✍️ Dorian Guyomard</div>
+    <div class="meta-item">📅 2025</div>
+    <div class="meta-item">⏱ 4 min de lecture</div>
+    <div class="meta-item">🎯 Meta Ads · PME · Stratégie</div>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p>
+    Chaque semaine, des centaines de PME françaises dépensent leur budget publicitaire sur Facebook et Instagram sans obtenir de résultats satisfaisants. Pas parce que Meta Ads ne fonctionne pas — mais parce que certaines erreurs fondamentales reviennent systématiquement. Voici les 3 plus courantes, et ce qu'il faut faire à la place.
+  </p>
+
+  <div class="pull-quote">
+    "Ce n'est pas Meta Ads qui ne fonctionne pas. C'est la façon dont on l'utilise qui pose problème."
+  </div>
+
+  <!-- ERREUR 1 -->
+  <div class="error-block">
+    <p class="error-num">Erreur N°1</p>
+    <h2>Booster une publication au lieu de créer une vraie campagne</h2>
+    <p>
+      C'est l'erreur la plus répandue. Le bouton "Booster la publication" est conçu pour être simple — trop simple. Il vous donne l'impression de faire de la publicité, mais en réalité vous utilisez les outils les plus basiques de Meta, sans contrôle sur les audiences, les placements, ni les objectifs d'optimisation.
+    </p>
+    <p>
+      Une publication boostée optimise pour l'engagement (likes, commentaires). Une campagne créée dans Ads Manager peut optimiser pour les conversions, les leads, les ventes. Ce n'est pas la même chose.
+    </p>
+    <div class="tip-box">
+      <strong>✓ La bonne pratique :</strong> Passez par Meta Ads Manager. Choisissez un objectif aligné avec votre vrai objectif business — "Leads" pour récupérer des contacts, "Ventes" pour un e-commerce, "Trafic" uniquement si vous voulez des visites.
+    </div>
+  </div>
+
+  <!-- ERREUR 2 -->
+  <div class="error-block">
+    <p class="error-num">Erreur N°2</p>
+    <h2>Cibler tout le monde (et donc ne cibler personne)</h2>
+    <p>
+      "Notre cible c'est tout le monde entre 25 et 55 ans en France." Cette phrase est la garantie de gaspiller son budget. Plus votre audience est large et vague, moins l'algorithme Meta sait à qui montrer votre publicité — et plus votre coût par résultat grimpe.
+    </p>
+    <p>
+      À l'inverse, certains tombent dans le piège opposé : une audience trop restreinte, trop de filtres, et Meta n'a pas assez de données pour optimiser correctement.
+    </p>
+    <div class="tip-box">
+      <strong>✓ La bonne pratique :</strong> Définissez une audience principale cohérente (500k – 2M de personnes selon votre budget), testez des audiences lookalike à partir de vos clients existants, et laissez du travail à l'algorithme. En 2025, Meta Advantage+ fait souvent mieux que le sur-ciblage manuel.
+    </div>
+  </div>
+
+  <!-- ERREUR 3 -->
+  <div class="error-block">
+    <p class="error-num">Erreur N°3</p>
+    <h2>Couper les campagnes trop vite — ou ne jamais les toucher</h2>
+    <p>
+      Deux extrêmes, deux erreurs. La première : après 2 jours et 30€ dépensés, on coupe la campagne parce qu'elle "ne marche pas". Le problème : Meta a besoin d'une <strong>phase d'apprentissage</strong> de 7 à 14 jours et d'environ 50 conversions pour optimiser correctement. Couper avant, c'est jeter l'argent investi.
+    </p>
+    <p>
+      La seconde : laisser tourner une campagne sans jamais y toucher pendant des semaines. La fatigue créative s'installe, les CPM augmentent, les performances baissent — et on ne voit rien venir.
+    </p>
+    <div class="tip-box">
+      <strong>✓ La bonne pratique :</strong> Laissez le temps à la phase d'apprentissage de se terminer avant de juger. Ensuite, analysez les données régulièrement (au moins 2-3 fois par semaine), rafraîchissez vos créatifs toutes les 3-4 semaines, et ne modifiez jamais trop d'éléments à la fois — vous ne saurez plus ce qui a impacté les résultats.
+    </div>
+  </div>
+
+  <p>
+    Ces trois erreurs se corrigent. Elles ne demandent pas un budget plus important — elles demandent une meilleure structuration et une lecture régulière des données. C'est exactement ce que propose un audit : identifier où votre budget fuit, et comment le rediriger efficacement.
+  </p>
+
+  <!-- CTA FINAL -->
+  <div class="article-cta">
+    <h3>Vous vous reconnaissez dans ces erreurs ?</h3>
+    <p>Je vous propose un audit complet et gratuit de vos campagnes Meta Ads, avec un rapport clair et des recommandations actionnables — livré en 48h.</p>
+    <a href="/#contact" class="btn-cta">🎯 Demander mon audit gratuit</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 <strong style="color:rgba(255,255,255,0.7)">Dorian Guyomard</strong> — Media Buyer Meta Ads</p>
+  <div class="f-links">
+    <a href="/">Accueil</a>
+    <a href="/a-propos.html">Qui je suis</a>
+    <a href="/#services">Services</a>
+    <a href="https://www.instagram.com/dorian.meta_ads" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>

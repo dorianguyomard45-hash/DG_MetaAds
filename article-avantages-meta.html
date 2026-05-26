@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pourquoi Meta Ads est le levier le plus puissant pour les TPE/PME — Dorian Guyomard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--cream:#F7F6F2;--white:#FFFFFF;--ink:#0C0C14;--ink-60:rgba(12,12,20,0.55);--blue:#1877F2;--blue-10:rgba(24,119,242,0.09);--gold:#F5A623;--gold-10:rgba(245,166,35,0.1);--border:rgba(12,12,20,0.1);--font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;--ease:cubic-bezier(0.22,1,0.36,1);}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:var(--font-b);font-size:16px;line-height:1.7;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;background:rgba(247,246,242,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1.05rem;color:var(--ink);text-decoration:none;}.logo .dot{color:var(--blue);}
+nav ul{display:flex;gap:2rem;list-style:none;}
+nav a{color:var(--ink-60);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s;}
+nav a:hover{color:var(--ink);}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:0.55rem 1.3rem;border-radius:100px;font-weight:600;}
+.article-hero{padding:9rem 5vw 3rem;max-width:760px;margin:0 auto;animation:fadeUp 0.8s var(--ease) both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--ink-60);margin-bottom:1.5rem;}
+.breadcrumb a{color:var(--blue);text-decoration:none;font-weight:600;}
+.article-label{display:inline-flex;background:var(--blue-10);border:1px solid rgba(24,119,242,0.2);color:var(--blue);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.85rem;border-radius:100px;margin-bottom:1.2rem;}
+h1{font-family:var(--font-d);font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.08;letter-spacing:-0.02em;margin-bottom:1.2rem;}
+h1 span{color:var(--blue);}
+.article-meta{display:flex;align-items:center;gap:1.5rem;font-size:0.78rem;color:var(--ink-60);padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:3rem;flex-wrap:wrap;}
+.article-body{max-width:760px;margin:0 auto;padding:0 5vw 5rem;}
+.article-body p{font-size:0.97rem;color:var(--ink-60);line-height:1.85;margin-bottom:1.4rem;}
+.article-body strong{color:var(--ink);font-weight:600;}
+.block{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem 2.2rem;margin:2.5rem 0;position:relative;overflow:hidden;}
+.block::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--blue);}
+.block-num{font-size:0.7rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:0.6rem;}
+.block h2{font-family:var(--font-d);font-size:1.2rem;font-weight:800;margin-bottom:1rem;line-height:1.2;}
+.block p{margin-bottom:0.8rem;}.block p:last-child{margin-bottom:0;}
+.tip{background:rgba(24,119,242,0.06);border:1px solid rgba(24,119,242,0.2);border-radius:10px;padding:1rem 1.2rem;margin-top:1rem;font-size:0.85rem;color:var(--ink);}
+.tip strong{color:var(--blue);}
+.pull-quote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:rgba(245,166,35,0.05);border-radius:0 10px 10px 0;font-size:1.05rem;font-style:italic;color:var(--ink);line-height:1.7;}
+.article-cta{background:var(--ink);border-radius:16px;padding:2.5rem;text-align:center;margin:3rem 0;}
+.article-cta h3{font-family:var(--font-d);font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:0.7rem;}
+.article-cta p{font-size:0.875rem;color:rgba(255,255,255,0.5);margin-bottom:1.5rem;}
+.btn-cta{display:inline-flex;align-items:center;gap:0.4rem;background:var(--blue);color:#fff;padding:0.9rem 2rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.2s;}
+.btn-cta:hover{background:#1469d6;transform:translateY(-2px);}
+footer{background:var(--ink);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+footer p{font-size:0.78rem;color:rgba(255,255,255,0.4);}
+.f-links{display:flex;gap:2rem;}.f-links a{font-size:0.78rem;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s;}.f-links a:hover{color:#fff;}
+@media(max-width:640px){nav ul{display:none;}}
+</style>
+</head>
+<body>
+<nav><a href="/" class="logo">DG<span class="dot">.</span>META</a><ul><li><a href="/">Accueil</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/a-propos.html">Qui je suis</a></li><li><a href="/#contact" class="nav-cta">Audit gratuit</a></li></ul></nav>
+
+<div class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span>›</span><a href="/blog.html">Blog</a><span>›</span><span>Avantages Meta Ads</span></div>
+  <div class="article-label">Bonnes pratiques</div>
+  <h1>Pourquoi Meta Ads est le levier le plus puissant pour les <span>TPE/PME</span></h1>
+  <div class="article-meta">
+    <span>✍️ Dorian Guyomard</span><span>📅 14 mai 2025</span><span>⏱ 5 min de lecture</span><span>#MetaAds #TPE #PME</span>
+  </div>
+</div>
+
+<div class="article-body">
+  <p>Quand on dirige une TPE ou une PME, chaque euro de budget marketing compte. On ne peut pas se permettre de gaspiller sur des canaux qui ne convertissent pas. Alors pourquoi Meta Ads — Facebook et Instagram — revient-il systématiquement dans les stratégies des entreprises qui croissent ? Voici les vraies raisons, sans raccourci.</p>
+
+  <div class="pull-quote">"3 milliards d'utilisateurs actifs par mois. Votre client est là. La question, c'est comment l'atteindre."</div>
+
+  <div class="block">
+    <p class="block-num">Avantage N°1</p>
+    <h2>Un ciblage d'une précision chirurgicale</h2>
+    <p>Google Ads vous permet de cibler des intentions de recherche. Meta Ads vous permet de cibler des <strong>profils complets</strong> : âge, localisation, centres d'intérêt, comportements d'achat, niveau de revenus, situation familiale, interactions passées avec votre page ou votre site.</p>
+    <p>Vous vendez des formations pour thérapeutes en reconversion ? Vous pouvez cibler exactement ce profil. Vous avez un restaurant gastronomique à Lyon ? Vous pouvez toucher des personnes qui dînent régulièrement au restaurant dans un rayon de 10 km.</p>
+    <div class="tip"><strong>✓ Ce que ça change concrètement :</strong> Vous arrêtez de payer pour des clics qui ne vous intéressent pas. Votre budget est concentré sur les personnes les plus susceptibles d'acheter.</div>
+  </div>
+
+  <div class="block">
+    <p class="block-num">Avantage N°2</p>
+    <h2>Un coût d'entrée accessible — contrairement aux idées reçues</h2>
+    <p>Une des croyances les plus répandues : "Meta Ads, c'est réservé aux grands budgets." C'est faux. Avec <strong>300 à 500€/mois</strong> de budget publicitaire et une bonne structure de campagne, une TPE peut générer des leads qualifiés et mesurer un retour sur investissement réel.</p>
+    <p>La clé, ce n'est pas le montant du budget — c'est son utilisation. Un budget de 2 000€ mal géré produit moins de résultats qu'un budget de 500€ bien structuré avec les bons ciblages et les bons créatifs.</p>
+    <div class="tip"><strong>✓ Point important :</strong> Le coût par lead sur Meta est souvent 2 à 5x inférieur à ce qu'on obtiendrait avec des méthodes traditionnelles (salons, print, démarchage).</div>
+  </div>
+
+  <div class="block">
+    <p class="block-num">Avantage N°3</p>
+    <h2>Des formats publicitaires pensés pour convertir</h2>
+    <p>Meta propose des formats qu'aucune autre plateforme ne propose à ce niveau : <strong>Lead Ads</strong> (formulaire intégré dans la pub, sans quitter l'appli), <strong>Catalogue dynamique</strong> (retargeting automatique des produits vus), <strong>Reels Ads</strong>, <strong>Stories</strong>, carrousels, vidéos…</p>
+    <p>Chaque format a une utilité précise selon l'étape du funnel. Une vidéo de 15 secondes pour la notoriété. Un carrousel pour présenter plusieurs produits. Un Lead Ad pour collecter des contacts sans friction.</p>
+    <div class="tip"><strong>✓ Ce qu'on observe :</strong> Les Lead Ads réduisent le taux d'abandon de 40% par rapport à un formulaire sur une landing page externe. Moins de clics = plus de conversions.</div>
+  </div>
+
+  <div class="block">
+    <p class="block-num">Avantage N°4</p>
+    <h2>Une mesurabilité totale — vous savez exactement ce que ça rapporte</h2>
+    <p>Contrairement à une publicité dans un journal local ou un flyer, chaque euro dépensé sur Meta est traçable. Vous savez combien de personnes ont vu votre pub, combien ont cliqué, combien ont acheté, quel était le coût par conversion.</p>
+    <p>C'est ce qu'on appelle la <strong>mesurabilité</strong> — et c'est l'un des arguments les plus forts de la publicité digitale en général, et de Meta en particulier grâce à son Pixel de tracking.</p>
+    <div class="tip"><strong>✓ En pratique :</strong> Vous pouvez calculer votre ROAS (Return On Ad Spend) à l'euro près. Si vous dépensez 500€ et que ça génère 2 000€ de CA, votre ROAS est de 4x. Simple, mesurable, comparable.</div>
+  </div>
+
+  <p>Meta Ads n'est pas une formule magique. Ça demande de la rigueur, une bonne structure et une optimisation continue. Mais pour une TPE ou PME qui cherche à acquérir des clients de façon prévisible et scalable, c'est aujourd'hui l'un des leviers les plus efficaces disponibles.</p>
+
+  <div class="article-cta">
+    <h3>Vous voulez savoir si Meta Ads est adapté à votre business ?</h3>
+    <p>Je vous offre un audit gratuit de votre situation — sans engagement, livré en 48h.</p>
+    <a href="/#contact" class="btn-cta">🎯 Demander mon audit gratuit</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 <strong style="color:rgba(255,255,255,0.7)">Dorian Guyomard</strong> — Media Buyer Meta Ads</p>
+  <div class="f-links"><a href="/">Accueil</a><a href="/blog.html">Blog</a><a href="/a-propos.html">Qui je suis</a><a href="https://www.instagram.com/dorian.meta_ads" target="_blank">Instagram</a></div>
+</footer>
+</body></html>

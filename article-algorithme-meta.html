@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment fonctionne l'algorithme Meta Ads — Dorian Guyomard</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}:root{--cream:#F7F6F2;--white:#FFFFFF;--ink:#0C0C14;--ink-60:rgba(12,12,20,0.55);--blue:#1877F2;--blue-10:rgba(24,119,242,0.09);--gold:#F5A623;--border:rgba(12,12,20,0.1);--font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;--ease:cubic-bezier(0.22,1,0.36,1);}body{background:var(--cream);color:var(--ink);font-family:var(--font-b);font-size:16px;line-height:1.7;overflow-x:hidden;}nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;background:rgba(247,246,242,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}.logo{font-family:var(--font-d);font-weight:800;font-size:1.05rem;color:var(--ink);text-decoration:none;}.logo .dot{color:var(--blue);}nav ul{display:flex;gap:2rem;list-style:none;}nav a{color:var(--ink-60);text-decoration:none;font-size:0.85rem;font-weight:500;}nav a:hover{color:var(--ink);}.nav-cta{background:var(--blue)!important;color:#fff!important;padding:0.55rem 1.3rem;border-radius:100px;font-weight:600;}.article-hero{padding:9rem 5vw 3rem;max-width:760px;margin:0 auto;animation:fadeUp 0.8s var(--ease) both;}@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}.breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--ink-60);margin-bottom:1.5rem;}.breadcrumb a{color:var(--blue);text-decoration:none;font-weight:600;}.article-label{display:inline-flex;background:var(--blue-10);border:1px solid rgba(24,119,242,0.2);color:var(--blue);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.85rem;border-radius:100px;margin-bottom:1.2rem;}h1{font-family:var(--font-d);font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.08;letter-spacing:-0.02em;margin-bottom:1.2rem;}h1 span{color:var(--blue);}.article-meta{display:flex;align-items:center;gap:1.5rem;font-size:0.78rem;color:var(--ink-60);padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:3rem;flex-wrap:wrap;}.article-body{max-width:760px;margin:0 auto;padding:0 5vw 5rem;}.article-body p{font-size:0.97rem;color:var(--ink-60);line-height:1.85;margin-bottom:1.4rem;}.article-body strong{color:var(--ink);font-weight:600;}.block{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem 2.2rem;margin:2.5rem 0;position:relative;overflow:hidden;}.block::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--blue);}.block-num{font-size:0.7rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:0.6rem;}.block h2{font-family:var(--font-d);font-size:1.2rem;font-weight:800;margin-bottom:1rem;line-height:1.2;}.block p{margin-bottom:0.8rem;}.block p:last-child{margin-bottom:0;}.tip{background:rgba(24,119,242,0.06);border:1px solid rgba(24,119,242,0.2);border-radius:10px;padding:1rem 1.2rem;margin-top:1rem;font-size:0.85rem;}.tip strong{color:var(--blue);}.pull-quote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:rgba(245,166,35,0.05);border-radius:0 10px 10px 0;font-size:1.05rem;font-style:italic;color:var(--ink);line-height:1.7;}.article-cta{background:var(--ink);border-radius:16px;padding:2.5rem;text-align:center;margin:3rem 0;}.article-cta h3{font-family:var(--font-d);font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:0.7rem;}.article-cta p{font-size:0.875rem;color:rgba(255,255,255,0.5);margin-bottom:1.5rem;}.btn-cta{display:inline-flex;background:var(--blue);color:#fff;padding:0.9rem 2rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.2s;}.btn-cta:hover{background:#1469d6;transform:translateY(-2px);}footer{background:var(--ink);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}footer p{font-size:0.78rem;color:rgba(255,255,255,0.4);}.f-links{display:flex;gap:2rem;}.f-links a{font-size:0.78rem;color:rgba(255,255,255,0.4);text-decoration:none;}.f-links a:hover{color:#fff;}@media(max-width:640px){nav ul{display:none;}}</style>
+</head>
+<body>
+<nav><a href="/" class="logo">DG<span class="dot">.</span>META</a><ul><li><a href="/">Accueil</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/a-propos.html">Qui je suis</a></li><li><a href="/#contact" class="nav-cta">Audit gratuit</a></li></ul></nav>
+<div class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span>›</span><a href="/blog.html">Blog</a><span>›</span><span>L'algorithme Meta Ads</span></div>
+  <div class="article-label">Meta Ads</div>
+  <h1>Comment fonctionnent vraiment les <span>publicités Meta</span> ? L'algorithme expliqué simplement</h1>
+  <div class="article-meta"><span>✍️ Dorian Guyomard</span><span>📅 18 avril 2025</span><span>⏱ 7 min</span><span>#Algorithme #MetaAds #Stratégie</span></div>
+</div>
+<div class="article-body">
+  <p>Meta Ads, c'est souvent perçu comme une boîte noire. On met de l'argent dedans, parfois ça marche, parfois non — sans vraiment comprendre pourquoi. La réalité, c'est que l'algorithme Meta suit une logique précise. Comprendre cette logique, c'est déjà avoir une longueur d'avance sur 80% de vos concurrents.</p>
+
+  <div class="pull-quote">"L'algorithme Meta n'est pas votre ennemi. Il est votre associé — à condition de lui donner les bons signaux."</div>
+
+  <div class="block">
+    <p class="block-num">Concept clé N°1</p>
+    <h2>Le système d'enchères : vous ne payez pas un tarif fixe</h2>
+    <p>Chaque fois qu'un emplacement publicitaire se libère (dans le fil d'actualité, dans les Stories, dans Reels…), Meta organise une <strong>enchère en temps réel</strong> entre tous les annonceurs qui veulent toucher ce même utilisateur.</p>
+    <p>Mais attention : ce n'est pas forcément le plus offrant qui gagne. Meta prend en compte trois facteurs : votre enchère (ce que vous êtes prêt à payer), le taux d'action estimé (la probabilité que l'utilisateur clique ou convertisse), et la qualité de votre publicité (pertinence, feedback des utilisateurs).</p>
+    <div class="tip"><strong>✓ Ce que ça veut dire pour vous :</strong> Une pub très pertinente avec une petite enchère peut battre une pub médiocre avec un gros budget. La qualité du créatif est aussi importante que le budget.</div>
+  </div>
+
+  <div class="block">
+    <p class="block-num">Concept clé N°2</p>
+    <h2>La phase d'apprentissage : ne touchez à rien pendant 7 à 14 jours</h2>
+    <p>Quand vous lancez une campagne, Meta entre en <strong>phase d'apprentissage</strong>. Pendant cette période, l'algorithme teste différentes combinaisons d'audiences et de placements pour comprendre qui est le plus susceptible de réaliser l'action que vous souhaitez.</p>
+    <p>Cette phase dure généralement jusqu'à ce que votre ensemble de publicités atteigne <strong>50 conversions</strong>. Modifier votre campagne avant ce seuil réinitialise l'apprentissage — et vous perdez les données accumulées.</p>
+    <div class="tip"><strong>✓ Règle d'or :</strong> Lancez une campagne et ne touchez à rien pendant minimum 7 jours (idéalement 14). Résistez à l'envie de modifier le ciblage ou le budget dès les premières heures. C'est la première cause de campagnes qui sous-performent.</div>
+  </div>
+
+  <div class="block">
+    <p class="block-num">Concept clé N°3</p>
+    <h2>Le score de pertinence : Meta récompense les bonnes pubs</h2>
+    <p>Meta évalue en permanence la qualité de vos publicités via des indicateurs de qualité : taux de clics, taux de conversion, retours négatifs (masquer la pub, la signaler…). Ces métriques forment ce qu'on appelait le "score de pertinence".</p>
+    <p>Une publicité bien accueillie par son audience verra son <strong>coût par résultat baisser naturellement</strong> — Meta la distribue plus largement car elle génère une bonne expérience utilisateur. À l'inverse, une pub ignorée ou signalée coûtera de plus en plus cher.</p>
+    <div class="tip"><strong>✓ En pratique :</strong> Surveille les métriques de qualité dans Ads Manager. Si votre CTR est inférieur à 1% sur du trafic froid, c'est souvent le créatif (visuel ou accroche) qui est en cause — pas l'audience.</div>
+  </div>
+
+  <div class="block">
+    <p class="block-num">Concept clé N°4</p>
+    <h2>Advantage+ : l'IA de Meta qui gère tout automatiquement</h2>
+    <p>Depuis 2022-2023, Meta a déployé massivement ses fonctionnalités <strong>Advantage+</strong> : ciblage automatique, placements automatiques, créatifs dynamiques… L'idée est de laisser l'IA de Meta optimiser à votre place en se basant sur vos données historiques.</p>
+    <p>Pour les comptes avec un historique solide et un budget suffisant, Advantage+ performe souvent mieux que le ciblage manuel. Pour les comptes qui débutent ou avec peu de données, un cadrage manuel reste préférable au départ.</p>
+    <div class="tip"><strong>✓ Mon approche :</strong> Utilisez les placements automatiques (Advantage+) dès le départ — Meta sait mieux que vous où vos pubs performent. Mais gardez le contrôle sur les audiences et les créatifs au début.</div>
+  </div>
+
+  <p>L'algorithme Meta est conçu pour optimiser votre objectif déclaré — à condition de lui donner du temps, du budget et de bons créatifs. Plus vous l'alimentez en données de qualité, plus il performe. C'est un cercle vertueux que les bons media buyers savent activer.</p>
+
+  <div class="article-cta">
+    <h3>Vous voulez une campagne qui exploite vraiment l'algorithme Meta ?</h3>
+    <p>Audit gratuit de votre compte — structure, ciblages, créatifs — livré en 48h.</p>
+    <a href="/#contact" class="btn-cta">🎯 Demander mon audit gratuit</a>
+  </div>
+</div>
+<footer>
+  <p>© 2025 <strong style="color:rgba(255,255,255,0.7)">Dorian Guyomard</strong> — Media Buyer Meta Ads</p>
+  <div class="f-links"><a href="/">Accueil</a><a href="/blog.html">Blog</a><a href="/a-propos.html">Qui je suis</a><a href="https://www.instagram.com/dorian.meta_ads" target="_blank">Instagram</a></div>
+</footer>
+</body></html>
