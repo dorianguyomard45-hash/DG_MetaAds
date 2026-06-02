@@ -1,0 +1,32 @@
+<!--
+  ════════════════════════════════════════════════
+  SNIPPET À INSÉRER DANS TON index.html
+  ════════════════════════════════════════════════
+
+  Dans la section #hero, tu as déjà .hero-left et .hero-right.
+  Remplace le contenu de .hero-left par ce bloc
+  (ajoute juste la photo AVANT le .pill existant) :
+  ════════════════════════════════════════════════
+-->
+
+<!-- PHOTO — colle ceci tout en haut du .hero-left, avant le .pill -->
+<div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.8rem;">
+  <img
+    src="dorian_photo.png"
+    alt="Dorian Guyomard"
+    style="
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 1px var(--border), 0 4px 16px rgba(24,119,242,0.15);
+      flex-shrink: 0;
+    "
+  />
+  <div>
+    <div style="font-family:var(--font-d); font-size:0.88rem; font-weight:700; color:var(--ink);">Dorian Guyomard</div>
+    <div style="font-size:0.75rem; color:var(--ink-60); font-weight:500;">Media Buyer Meta Ads · Freelance</div>
+  </div>
+</div>
+<!-- FIN PHOTO -->
