@@ -266,16 +266,16 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
 
   <!-- FILTERS -->
   <div class="filters">
-    <button class="filter-btn active">Tous</button>
-    <button class="filter-btn">Meta Ads</button>
-    <button class="filter-btn">Génération de leads</button>
-    <button class="filter-btn">Stratégie</button>
-    <button class="filter-btn">Prospection</button>
-    <button class="filter-btn">Bonnes pratiques</button>
+    <button class="filter-btn active" data-cat="tous">Tous</button>
+    <button class="filter-btn" data-cat="meta-ads">Meta Ads</button>
+    <button class="filter-btn" data-cat="leads">Génération de leads</button>
+    <button class="filter-btn" data-cat="strategie">Stratégie</button>
+    <button class="filter-btn" data-cat="prospection">Prospection</button>
+    <button class="filter-btn" data-cat="bonnes-pratiques">Bonnes pratiques</button>
   </div>
 
   <!-- FEATURED -->
-  <a href="/DG_MetaAds/article-erreurs-pme.html" class="featured">
+  <a href="/DG_MetaAds/article-erreurs-pme.html" class="featured" data-cat="meta-ads">
     <div class="featured-visual">
       <span class="featured-icon">📣</span>
     </div>
@@ -295,7 +295,7 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
   <!-- GRID -->
   <div class="articles-grid">
 
-    <a href="/DG_MetaAds/article-avantages-meta.html" class="article-card reveal">
+    <a href="/DG_MetaAds/article-avantages-meta.html" class="article-card reveal" data-cat="bonnes-pratiques">
       <div class="card-visual cv1"><span class="card-emoji">💰</span></div>
       <div class="card-body">
         <p class="card-tag">Bonnes pratiques</p>
@@ -308,7 +308,7 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
       </div>
     </a>
 
-    <a href="/DG_MetaAds/article-leads-qualifies.html" class="article-card reveal d1">
+    <a href="/DG_MetaAds/article-leads-qualifies.html" class="article-card reveal d1" data-cat="leads">
       <div class="card-visual cv2"><span class="card-emoji">🎯</span></div>
       <div class="card-body">
         <p class="card-tag">Génération de leads</p>
@@ -321,7 +321,7 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
       </div>
     </a>
 
-    <a href="/DG_MetaAds/article-algorithme-meta.html" class="article-card reveal d2">
+    <a href="/DG_MetaAds/article-algorithme-meta.html" class="article-card reveal d2" data-cat="meta-ads">
       <div class="card-visual cv3"><span class="card-emoji">⚙️</span></div>
       <div class="card-body">
         <p class="card-tag">Meta Ads</p>
@@ -334,7 +334,7 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
       </div>
     </a>
 
-    <a href="/DG_MetaAds/article-prospection.html" class="article-card reveal d3">
+    <a href="/DG_MetaAds/article-prospection.html" class="article-card reveal d3" data-cat="prospection">
       <div class="card-visual cv4"><span class="card-emoji">📞</span></div>
       <div class="card-body">
         <p class="card-tag">Prospection</p>
@@ -347,7 +347,7 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
       </div>
     </a>
 
-    <a href="/DG_MetaAds/article-metriques.html" class="article-card reveal d4">
+    <a href="/DG_MetaAds/article-metriques.html" class="article-card reveal d4" data-cat="strategie">
       <div class="card-visual cv5"><span class="card-emoji">📊</span></div>
       <div class="card-body">
         <p class="card-tag">Stratégie</p>
@@ -360,7 +360,7 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
       </div>
     </a>
 
-    <a href="/DG_MetaAds/article-retargeting.html" class="article-card reveal d5">
+    <a href="/DG_MetaAds/article-retargeting.html" class="article-card reveal d5" data-cat="leads">
       <div class="card-visual cv6"><span class="card-emoji">🔁</span></div>
       <div class="card-body">
         <p class="card-tag">Génération de leads</p>
@@ -400,11 +400,19 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Filter buttons (visuel uniquement pour l'instant)
+  // Filtres fonctionnels
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      // cards
+      document.querySelectorAll('.article-card').forEach(card => {
+        card.style.display = (cat === 'tous' || card.dataset.cat === cat) ? '' : 'none';
+      });
+      // featured
+      const feat = document.querySelector('.featured');
+      if(feat) feat.style.display = (cat === 'tous' || feat.dataset.cat === cat) ? '' : 'none';
     });
   });
 </script>
