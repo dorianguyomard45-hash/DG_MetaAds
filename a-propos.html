@@ -6,111 +6,114 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --cream:#F7F6F2;--white:#FFFFFF;--ink:#0C0C14;
-  --ink-60:rgba(12,12,20,0.52);--ink-30:rgba(12,12,20,0.28);
-  --blue:#1877F2;--blue-10:rgba(24,119,242,0.08);--blue-20:rgba(24,119,242,0.15);
-  --gold:#F5A623;--gold-10:rgba(245,166,35,0.09);
-  --border:rgba(12,12,20,0.09);
-  --font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;
-  --ease:cubic-bezier(0.22,1,0.36,1);
-}
+:root{--cream:#F7F6F2;--white:#FFFFFF;--ink:#0C0C14;--ink-60:rgba(12,12,20,0.55);--ink-30:rgba(12,12,20,0.28);--blue:#1877F2;--blue-10:rgba(24,119,242,0.09);--gold:#F5A623;--gold-10:rgba(245,166,35,0.1);--border:rgba(12,12,20,0.1);--font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;--ease:cubic-bezier(0.22,1,0.36,1);}
 html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--ink);font-family:var(--font-b);font-size:15px;line-height:1.7;overflow-x:hidden;}
 ::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-thumb{background:var(--blue);}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(247,246,242,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.logo{font-family:var(--font-d);font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:0.01em;}
-.logo .dot{color:var(--blue);}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;}.logo .dot{color:var(--blue);}
 nav ul{display:flex;gap:1.75rem;list-style:none;align-items:center;}
-nav a{color:var(--ink-60);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s;letter-spacing:0.01em;}
+nav a{color:var(--ink-60);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s;}
 nav a:hover,nav a.active{color:var(--ink);}
-.nav-cta{background:var(--blue)!important;color:#fff!important;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.8rem;transition:opacity 0.2s!important;}
-.nav-cta:hover{opacity:0.87;}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.8rem;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}.reveal.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.07s;}.d2{transition-delay:0.14s;}.d3{transition-delay:0.21s;}
 
-/* LAYOUT */
-.page-wrap{max-width:1080px;margin:0 auto;padding:0 5vw;}
-.section{padding:6rem 5vw;}
-
-/* TYPOGRAPHY */
-h1{font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;line-height:1.07;letter-spacing:-0.025em;color:var(--ink);}
-h2{font-family:var(--font-d);font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:800;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);}
-h3{font-family:var(--font-d);font-size:0.92rem;font-weight:700;color:var(--ink);}
-p{font-size:0.92rem;color:var(--ink-60);line-height:1.75;}
-strong{color:var(--ink);font-weight:600;}
-
-/* PILL / EYEBROW */
-.eyebrow{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:0.9rem;}
-.eyebrow::before{content:'';width:16px;height:1.5px;background:var(--blue);}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.75rem 1.6rem;font-family:var(--font-b);font-size:0.85rem;font-weight:600;border-radius:6px;text-decoration:none;cursor:pointer;border:none;transition:all 0.2s var(--ease);letter-spacing:0.01em;}
-.btn-primary{background:var(--blue);color:#fff;}
-.btn-primary:hover{background:#1469d6;transform:translateY(-1px);box-shadow:0 6px 20px rgba(24,119,242,0.25);}
-.btn-secondary{background:var(--white);color:var(--ink);border:1.5px solid var(--border);}
-.btn-secondary:hover{border-color:rgba(12,12,20,0.25);background:var(--white);}
-.btn-row{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;}
-
-/* CARDS */
-.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:all 0.22s var(--ease);}
-.card:hover{border-color:rgba(24,119,242,0.25);transform:translateY(-2px);box-shadow:0 8px 28px rgba(12,12,20,0.07);}
-
-/* DIVIDER */
-.divider{height:1px;background:var(--border);margin:0;}
-
-/* FOOTER */
-footer{background:var(--ink);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
-footer p{font-size:0.75rem;color:rgba(255,255,255,0.38);}
-.f-links{display:flex;gap:1.75rem;flex-wrap:wrap;}
-.f-links a{font-size:0.75rem;color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.2s;}
-.f-links a:hover{color:rgba(255,255,255,0.85);}
-
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}
-.reveal.on{opacity:1;transform:translateY(0);}
-.d1{transition-delay:0.07s;}.d2{transition-delay:0.14s;}.d3{transition-delay:0.21s;}.d4{transition-delay:0.28s;}
-
-/* MOBILE */
-@media(max-width:768px){
-  nav ul{display:none;}
-  h1{font-size:2rem;}
-  h2{font-size:1.5rem;}
-  .section{padding:4rem 5vw;}
+/* ── HERO HORIZONTAL ── */
+.about-hero{
+  padding:7.5rem 5vw 0;
+  max-width:1080px;margin:0 auto;
+  display:grid;grid-template-columns:280px 1fr;
+  gap:4rem;align-items:center;
+  animation:fadeUp 0.7s var(--ease) both;
 }
-.page-hero{padding:8.5rem 5vw 3.5rem;max-width:580px;margin:0 auto;text-align:center;animation:fadeUp 0.7s var(--ease) both;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-.page-hero .eyebrow{justify-content:center;}.page-hero .eyebrow::before{display:none;}
-.page-hero p{font-size:0.95rem;color:var(--ink-60);max-width:440px;margin:0.8rem auto 0;}
 
-.about-body{padding:0 5vw 6rem;}
-.about-grid{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
+/* PHOTO */
+.photo-wrap{position:relative;}
+.photo-frame{
+  width:100%;aspect-ratio:3/4;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--ink);
+  position:relative;
+}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-placeholder{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;
+  background:linear-gradient(135deg,#0D0D14 0%,#1A1A2E 100%);
+  color:rgba(255,255,255,0.3);font-size:0.75rem;text-align:center;padding:1rem;
+}
+.photo-placeholder .big{font-size:2.5rem;opacity:0.4;}
+.photo-badge{
+  position:absolute;bottom:-12px;right:-12px;
+  background:var(--blue);color:#fff;
+  border-radius:10px;padding:0.6rem 0.9rem;
+  font-family:var(--font-d);font-size:0.72rem;font-weight:700;
+  border:3px solid var(--cream);
+  white-space:nowrap;
+}
 
-.timeline{display:flex;flex-direction:column;gap:0;}
-.tl-item{padding:1.5rem 0 1.5rem 1.5rem;border-left:2px solid var(--border);position:relative;}
-.tl-item::before{content:'';position:absolute;left:-5px;top:1.75rem;width:8px;height:8px;border-radius:50%;background:var(--white);border:2px solid var(--blue);}
+/* HERO TEXT */
+.hero-text .eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:0.4rem;margin-bottom:0.8rem;}
+.hero-text .eyebrow::before{content:'';width:16px;height:1.5px;background:var(--blue);}
+.hero-text h1{font-family:var(--font-d);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;line-height:1.07;letter-spacing:-0.025em;margin-bottom:1.1rem;}
+.hero-text h1 span{color:var(--blue);}
+.hero-text p{font-size:0.95rem;color:var(--ink-60);line-height:1.8;margin-bottom:1.5rem;max-width:500px;}
+.tags-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+.tag{font-size:0.72rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:4px;background:var(--blue-10);color:var(--blue);border:1px solid rgba(24,119,242,0.18);}
+.tag.gold{background:var(--gold-10);color:#9A6500;border-color:rgba(245,166,35,0.2);}
+
+/* ── CONTENT SECTIONS ── */
+.about-body{padding:3.5rem 5vw 6rem;max-width:1080px;margin:0 auto;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;}
+
+/* TIMELINE */
+.timeline-wrap{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;}
+.section-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-30);margin-bottom:1.2rem;}
+.tl{display:flex;flex-direction:column;gap:0;}
+.tl-item{padding:1.2rem 0 1.2rem 1.3rem;border-left:2px solid var(--border);position:relative;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{content:'';position:absolute;left:-5px;top:1.5rem;width:8px;height:8px;border-radius:50%;background:var(--white);border:2px solid var(--blue);}
 .tl-item:first-child::before{background:var(--blue);}
-.tl-label{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:0.3rem;}
-.tl-item h3{font-family:var(--font-d);font-size:0.9rem;font-weight:800;margin-bottom:0.4rem;}
-.tl-item p{font-size:0.85rem;color:var(--ink-60);line-height:1.7;}
+.tl-lbl{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:0.25rem;}
+.tl-item h3{font-family:var(--font-d);font-size:0.88rem;font-weight:800;margin-bottom:0.3rem;}
+.tl-item p{font-size:0.82rem;color:var(--ink-60);line-height:1.65;}
 
-.values{display:flex;flex-direction:column;gap:0.75rem;}
-.value-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.3rem;display:flex;align-items:flex-start;gap:0.75rem;transition:border-color 0.2s;}
-.value-card:hover{border-color:rgba(24,119,242,0.22);}
-.v-icon{width:30px;height:30px;border-radius:7px;background:var(--blue-10);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;}
-.value-card h4{font-family:var(--font-d);font-size:0.85rem;font-weight:700;margin-bottom:0.2rem;}
-.value-card p{font-size:0.8rem;color:var(--ink-60);line-height:1.6;}
+/* VALUES */
+.values-wrap{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;}
+.values-list{display:flex;flex-direction:column;gap:0.75rem;}
+.val-item{display:flex;align-items:flex-start;gap:0.75rem;padding:0.9rem 1rem;background:var(--cream);border-radius:8px;border:1px solid transparent;transition:border-color 0.2s;}
+.val-item:hover{border-color:rgba(24,119,242,0.18);}
+.val-ico{width:30px;height:30px;border-radius:7px;background:var(--blue-10);border:1px solid rgba(24,119,242,0.18);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;}
+.val-item h4{font-family:var(--font-d);font-size:0.85rem;font-weight:700;margin-bottom:0.15rem;}
+.val-item p{font-size:0.8rem;color:var(--ink-60);line-height:1.6;}
 
-.cta-strip{max-width:860px;margin:1.5rem auto 0;background:var(--ink);border-radius:10px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
+/* CTA */
+.cta-strip{background:var(--ink);border-radius:12px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
 .cta-strip h3{font-family:var(--font-d);font-size:1rem;font-weight:800;color:#fff;margin-bottom:0.2rem;}
 .cta-strip p{font-size:0.82rem;color:rgba(255,255,255,0.5);}
 .btn-sm{display:inline-flex;background:var(--blue);color:#fff;padding:0.65rem 1.4rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.82rem;transition:all 0.2s;white-space:nowrap;}
 .btn-sm:hover{background:#1469d6;transform:translateY(-1px);}
 
-@media(max-width:640px){.about-grid{grid-template-columns:1fr;}.cta-strip{flex-direction:column;text-align:center;}nav ul{display:none;}}
+footer{background:var(--ink);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.38);}
+.f-links{display:flex;gap:1.75rem;flex-wrap:wrap;}.f-links a{font-size:0.75rem;color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.2s;}.f-links a:hover{color:rgba(255,255,255,0.85);}
+
+@media(max-width:768px){
+  nav ul{display:none;}
+  .about-hero{grid-template-columns:1fr;gap:2rem;padding-top:6rem;}
+  .photo-frame{aspect-ratio:1/1;max-width:200px;}
+  .two-col{grid-template-columns:1fr;}
+  .cta-strip{flex-direction:column;text-align:center;}
+}
 </style>
 </head>
 <body>
+
 <nav>
   <a href="/DG_MetaAds/" class="logo">DG<span class="dot">.</span>META</a>
   <ul>
@@ -119,58 +122,89 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.38);}
     <li><a href="/DG_MetaAds/services.html">Services</a></li>
     <li><a href="/DG_MetaAds/blog.html">Blog</a></li>
     <li><a href="/DG_MetaAds/faq.html">FAQ</a></li>
-    <li><a href="/DG_MetaAds/a-propos.html">Qui je suis</a></li>
+    <li><a href="/DG_MetaAds/a-propos.html" class="active">Qui je suis</a></li>
     <li><a href="/DG_MetaAds/contact.html" class="nav-cta">Audit gratuit</a></li>
   </ul>
 </nav>
 
-<div class="page-hero">
-  <p class="eyebrow">Qui je suis</p>
-  <h1>Un profil analytique au service de vos <span style="color:var(--blue)">Meta Ads</span></h1>
-  <p>Analyste d'exploitation le jour, media buyer Meta Ads freelance — deux métiers qui se complètent parfaitement.</p>
+<!-- HERO HORIZONTAL : photo gauche + texte droite -->
+<div class="about-hero">
+  <div class="photo-wrap reveal">
+    <div class="photo-frame">
+      <!-- Remplace dorian_photo.png par le vrai nom de ton fichier, ex: dorian.jpg -->
+      <img src="/DG_MetaAds/dorian_photo.png" alt="Dorian Guyomard — Media Buyer Meta Ads"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="photo-placeholder">
+        <span class="big">👤</span>
+        <span>Ajoute ta photo dans GitHub<br>et remplace dorian_photo.png</span>
+      </div>
+    </div>
+    <div class="photo-badge">Media Buyer · Meta Ads</div>
+  </div>
+
+  <div class="hero-text reveal d1">
+    <p class="eyebrow">Qui je suis</p>
+    <h1>Dorian Guyomard<br><span>Media Buyer</span> Meta Ads</h1>
+    <p>Analyste d'exploitation le jour, media buyer Meta Ads freelance de passion — deux métiers qui se complètent parfaitement. Les données, la rigueur et l'analyse sont au cœur de mon approche.</p>
+    <div class="tags-row">
+      <span class="tag">Meta Ads</span>
+      <span class="tag">Facebook Ads</span>
+      <span class="tag">Instagram Ads</span>
+      <span class="tag gold">Région orléanaise</span>
+      <span class="tag gold">Partout en France</span>
+    </div>
+    <a href="/DG_MetaAds/contact.html" class="btn-sm">🎯 Demander l'audit gratuit</a>
+  </div>
 </div>
 
+<!-- CONTENT -->
 <div class="about-body">
-  <div class="about-grid">
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <p class="tl-label">Aujourd'hui</p>
-        <h3>Media Buyer Meta Ads · Freelance</h3>
-        <p>J'accompagne les entreprises dans la gestion et l'optimisation de leurs campagnes Facebook & Instagram Ads — audit gratuit, stratégie, pilotage quotidien.</p>
-      </div>
-      <div class="tl-item">
-        <p class="tl-label">Formation</p>
-        <h3>Formation spécialisée Meta Ads</h3>
-        <p>Formation dédiée aux Meta Ads — structure de campagnes, ciblage avancé, créatifs, optimisation et lecture des KPIs.</p>
-      </div>
-      <div class="tl-item">
-        <p class="tl-label">Métier principal</p>
-        <h3>Analyste d'exploitation</h3>
-        <p>Mon quotidien tourne autour des données, de la performance et de l'analyse. Un atout direct pour piloter des campagnes publicitaires.</p>
-      </div>
-      <div class="tl-item">
-        <p class="tl-label">L'origine</p>
-        <h3>Passionné des réseaux Meta</h3>
-        <p>Présent sur Facebook et Instagram depuis longtemps, j'ai développé un œil naturel pour ce qui capte l'attention — et ce qui ne fonctionne pas.</p>
+  <div class="two-col">
+    <div class="timeline-wrap reveal">
+      <p class="section-label">Mon parcours</p>
+      <div class="tl">
+        <div class="tl-item">
+          <p class="tl-lbl">Aujourd'hui</p>
+          <h3>Media Buyer Meta Ads · Freelance</h3>
+          <p>J'accompagne les entreprises dans la gestion et l'optimisation de leurs campagnes Facebook & Instagram — audit, stratégie, pilotage.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-lbl">Formation</p>
+          <h3>Formation spécialisée Meta Ads</h3>
+          <p>Structure de campagnes, ciblage avancé, créatifs, optimisation et lecture des KPIs. Une base solide validée par la pratique.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-lbl">Métier principal</p>
+          <h3>Analyste d'exploitation</h3>
+          <p>Mon quotidien tourne autour des données et de la performance — un atout direct pour piloter des campagnes publicitaires.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-lbl">L'origine</p>
+          <h3>Passionné des réseaux Meta</h3>
+          <p>Présent sur Facebook & Instagram depuis longtemps, j'ai développé un œil naturel pour ce qui capte l'attention.</p>
+        </div>
       </div>
     </div>
 
-    <div class="values reveal d2">
-      <div class="value-card">
-        <div class="v-icon">📊</div>
-        <div><h4>Orienté données</h4><p>Chaque décision est basée sur les chiffres. Mon background analytique est mon avantage concurrentiel.</p></div>
-      </div>
-      <div class="value-card">
-        <div class="v-icon">🎯</div>
-        <div><h4>Spécialiste Meta uniquement</h4><p>Je ne fais pas tout. Je maîtrise Meta Ads en profondeur et je ne m'en écarte pas.</p></div>
-      </div>
-      <div class="value-card">
-        <div class="v-icon">🔍</div>
-        <div><h4>Audit avant tout</h4><p>Je commence toujours par comprendre votre situation avant de proposer quoi que ce soit.</p></div>
-      </div>
-      <div class="value-card">
-        <div class="v-icon">💬</div>
-        <div><h4>Transparent & direct</h4><p>Vous comprenez ce que je fais, pourquoi je le fais, et ce que ça rapporte — sans jargon.</p></div>
+    <div class="values-wrap reveal d1">
+      <p class="section-label">Ce qui me différencie</p>
+      <div class="values-list">
+        <div class="val-item">
+          <div class="val-ico">📊</div>
+          <div><h4>Orienté données</h4><p>Chaque décision est basée sur les chiffres, pas les intuitions. Mon background analytique est mon avantage.</p></div>
+        </div>
+        <div class="val-item">
+          <div class="val-ico">🎯</div>
+          <div><h4>Spécialiste Meta uniquement</h4><p>Je ne fais pas tout. Je maîtrise Meta Ads en profondeur et ne m'en écarte pas.</p></div>
+        </div>
+        <div class="val-item">
+          <div class="val-ico">🔍</div>
+          <div><h4>Audit avant tout</h4><p>Je comprends votre situation avant de proposer quoi que ce soit — gratuit, sans engagement.</p></div>
+        </div>
+        <div class="val-item">
+          <div class="val-ico">💬</div>
+          <div><h4>Transparent & direct</h4><p>Vous savez ce que je fais, pourquoi, et ce que ça rapporte — sans jargon inutile.</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -190,6 +224,7 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.38);}
     <a href="/DG_MetaAds/">Accueil</a><a href="/DG_MetaAds/media-buyer.html">Media Buyer ?</a><a href="/DG_MetaAds/services.html">Services</a><a href="/DG_MetaAds/blog.html">Blog</a><a href="/DG_MetaAds/faq.html">FAQ</a><a href="/DG_MetaAds/a-propos.html">Qui je suis</a><a href="/DG_MetaAds/contact.html">Contact</a><a href="https://www.instagram.com/dorian.meta_ads" target="_blank">Instagram</a>
   </div>
 </footer>
+
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add("on");obs.unobserve(el.target);}});},{threshold:0.1});
 document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
