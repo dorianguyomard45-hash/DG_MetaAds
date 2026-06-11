@@ -135,6 +135,30 @@ h1 em{font-style:italic;color:var(--gold);font-family:var(--font-b);font-weight:
   .hero-right{order:-1;}
   #hero{min-height:auto;padding:6rem 5vw 3rem;}
 }
+
+/* ── VISUAL BLOCKS ── */
+.visual-section{padding:5rem 5vw;background:var(--white);}
+.visual-inner{max-width:1080px;margin:0 auto;}
+.visual-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem;}
+.stat-card{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-align:center;transition:all 0.22s var(--ease);}
+.stat-card:hover{border-color:rgba(24,119,242,0.2);transform:translateY(-2px);}
+.stat-val{font-family:var(--font-d);font-size:2.2rem;font-weight:800;color:var(--blue);line-height:1;}
+.stat-val .unit{font-size:1.1rem;font-weight:700;color:var(--gold);}
+.stat-lbl{font-size:0.78rem;color:var(--ink-60);margin-top:0.4rem;line-height:1.4;}
+.funnel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
+.funnel-step{border-radius:10px;padding:1.2rem 1rem;text-align:center;position:relative;}
+.funnel-step::after{content:'→';position:absolute;right:-0.5rem;top:50%;transform:translateY(-50%);font-size:0.7rem;color:var(--ink-30);z-index:1;}
+.funnel-step:last-child::after{display:none;}
+.f-ico{font-size:1.4rem;margin-bottom:0.4rem;display:block;}
+.f-title{font-family:var(--font-d);font-size:0.78rem;font-weight:700;margin-bottom:0.2rem;}
+.f-desc{font-size:0.72rem;color:var(--ink-60);line-height:1.4;}
+.fs1{background:rgba(24,119,242,0.06);border:1px solid rgba(24,119,242,0.15);}
+.fs2{background:rgba(24,119,242,0.04);border:1px solid rgba(24,119,242,0.1);}
+.fs3{background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.15);}
+.fs4{background:rgba(245,166,35,0.09);border:1px solid rgba(245,166,35,0.25);}
+.fs4 .f-title,.fs4 .f-desc{color:#9A6500;}
+.section-eyebrow-sm{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-30);margin-bottom:1.2rem;}
+@media(max-width:640px){.visual-row{grid-template-columns:1fr 1fr;}.funnel-row{grid-template-columns:1fr 1fr;}.funnel-step::after{display:none;}}
 </style>
 </head>
 <body>
@@ -143,6 +167,7 @@ h1 em{font-style:italic;color:var(--gold);font-family:var(--font-b);font-weight:
   <a href="/DG_MetaAds/" class="logo">DG<span class="dot">.</span>META</a>
   <ul>
     <li><a href="/DG_MetaAds/" class="active">Accueil</a></li>
+    <li><a href="/DG_MetaAds/media-buyer.html">Media Buyer ?</a></li>
     <li><a href="/DG_MetaAds/services.html">Services</a></li>
     <li><a href="/DG_MetaAds/blog.html">Blog</a></li>
     <li><a href="/DG_MetaAds/faq.html">FAQ</a></li>
@@ -194,10 +219,55 @@ h1 em{font-style:italic;color:var(--gold);font-family:var(--font-b);font-weight:
   </div>
 </div>
 
+<!-- ── VISUAL BLOCKS ── -->
+<section class="visual-section">
+  <div class="visual-inner">
+    <p class="section-eyebrow-sm">Pourquoi Meta Ads ?</p>
+    <div class="visual-row">
+      <div class="stat-card reveal">
+        <div class="stat-val">3<span class="unit">Mds</span></div>
+        <div class="stat-lbl">Utilisateurs actifs sur Facebook & Instagram chaque mois</div>
+      </div>
+      <div class="stat-card reveal d1">
+        <div class="stat-val">48<span class="unit">h</span></div>
+        <div class="stat-lbl">Délai de livraison de votre audit complet — sans engagement</div>
+      </div>
+      <div class="stat-card reveal d2">
+        <div class="stat-val">0<span class="unit">€</span></div>
+        <div class="stat-lbl">Coût de l'audit de diagnostic — offert, sans condition</div>
+      </div>
+    </div>
+    <p class="section-eyebrow-sm" style="margin-top:2rem;">Comment ça fonctionne</p>
+    <div class="funnel-row">
+      <div class="funnel-step fs1 reveal">
+        <span class="f-ico">🌍</span>
+        <p class="f-title">Notoriété</p>
+        <p class="f-desc">Toucher une audience froide ciblée avec précision</p>
+      </div>
+      <div class="funnel-step fs2 reveal d1">
+        <span class="f-ico">👀</span>
+        <p class="f-title">Engagement</p>
+        <p class="f-desc">Capter l'intérêt et générer des visites qualifiées</p>
+      </div>
+      <div class="funnel-step fs3 reveal d2">
+        <span class="f-ico">🔁</span>
+        <p class="f-title">Retargeting</p>
+        <p class="f-desc">Récupérer les visiteurs qui n'ont pas encore converti</p>
+      </div>
+      <div class="funnel-step fs4 reveal d3">
+        <span class="f-ico">💰</span>
+        <p class="f-title">Conversion</p>
+        <p class="f-desc">Transformer les prospects chauds en clients</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <footer>
   <p>© 2025 <strong style="color:rgba(255,255,255,0.7)">Dorian Guyomard</strong> — Media Buyer Meta Ads · Région orléanaise</p>
   <div class="f-links">
-    <a href="/DG_MetaAds/">Accueil</a><a href="/DG_MetaAds/services.html">Services</a><a href="/DG_MetaAds/blog.html">Blog</a><a href="/DG_MetaAds/faq.html">FAQ</a><a href="/DG_MetaAds/a-propos.html">Qui je suis</a><a href="/DG_MetaAds/contact.html">Contact</a><a href="https://www.instagram.com/dorian.meta_ads" target="_blank">Instagram</a>
+    <a href="/DG_MetaAds/">Accueil</a><a href="/DG_MetaAds/media-buyer.html">Media Buyer ?</a><a href="/DG_MetaAds/services.html">Services</a><a href="/DG_MetaAds/blog.html">Blog</a><a href="/DG_MetaAds/faq.html">FAQ</a><a href="/DG_MetaAds/a-propos.html">Qui je suis</a><a href="/DG_MetaAds/contact.html">Contact</a><a href="https://www.instagram.com/dorian.meta_ads" target="_blank">Instagram</a>
   </div>
 </footer>
 
