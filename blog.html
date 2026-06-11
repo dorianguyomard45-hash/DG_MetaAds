@@ -1,270 +1,117 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Meta Ads & Acquisition · Dorian Guyomard</title>
-<meta name="description" content="Guides, conseils et bonnes pratiques sur Meta Ads, la génération de leads et la publicité Facebook & Instagram pour les entreprises.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Meta Ads — Dorian Guyomard</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-:root {
-  --cream:#F7F6F2; --white:#FFFFFF; --ink:#0C0C14; --ink-60:rgba(12,12,20,0.55);
-  --blue:#1877F2; --blue-10:rgba(24,119,242,0.09); --blue-20:rgba(24,119,242,0.15);
-  --gold:#F5A623; --gold-10:rgba(245,166,35,0.1);
-  --border:rgba(12,12,20,0.1); --border-hover:rgba(24,119,242,0.3);
-  --font-d:'Syne',sans-serif; --font-b:'DM Sans',sans-serif;
-  --ease:cubic-bezier(0.22,1,0.36,1);
-}
-html { scroll-behavior:smooth; }
-body { background:var(--cream); color:var(--ink); font-family:var(--font-b); font-size:15px; line-height:1.7; overflow-x:hidden; }
-::-webkit-scrollbar { width:3px; } ::-webkit-scrollbar-thumb { background:var(--blue); }
-
-/* ── NAV ── */
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:100;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:1.1rem 5vw;
-  background:rgba(247,246,242,0.92); backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-  animation: slideDown 0.6s var(--ease) both;
-}
-@keyframes slideDown { from { transform:translateY(-100%); opacity:0; } to { transform:translateY(0); opacity:1; } }
-.logo { font-family:var(--font-d); font-weight:800; font-size:1.05rem; color:var(--ink); text-decoration:none; }
-.logo .dot { color:var(--blue); }
-nav ul { display:flex; gap:2rem; list-style:none; }
-nav a { color:var(--ink-60); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.2s; }
-nav a:hover { color:var(--ink); }
-.nav-cta { background:var(--blue) !important; color:#fff !important; padding:0.55rem 1.3rem; border-radius:100px; font-weight:600; transition:opacity 0.2s !important; }
-.nav-cta:hover { opacity:0.85; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--cream:#F7F6F2;--white:#FFFFFF;--ink:#0C0C14;--ink-60:rgba(12,12,20,0.55);--ink-30:rgba(12,12,20,0.28);--blue:#1877F2;--blue-10:rgba(24,119,242,0.09);--gold:#F5A623;--gold-10:rgba(245,166,35,0.1);--border:rgba(12,12,20,0.1);--font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;--ease:cubic-bezier(0.22,1,0.36,1);}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:var(--font-b);font-size:15px;line-height:1.7;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-thumb{background:var(--blue);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(247,246,242,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;}.logo .dot{color:var(--blue);}
+nav ul{display:flex;gap:1.75rem;list-style:none;align-items:center;}
+nav a{color:var(--ink-60);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s;}
+nav a:hover,nav a.active{color:var(--ink);}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.8rem;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}.reveal.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.07s;}.d2{transition-delay:0.14s;}.d3{transition-delay:0.21s;}.d4{transition-delay:0.28s;}.d5{transition-delay:0.35s;}
 
 /* ── HERO ── */
-.blog-hero {
-  padding:9rem 5vw 5rem;
-  max-width:1100px; margin:0 auto;
-  animation: fadeUp 0.8s var(--ease) 0.1s both;
-}
-@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
-
-.eyebrow {
-  display:inline-flex; align-items:center; gap:0.5rem;
-  font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
-  color:var(--blue); margin-bottom:1rem;
-}
-.eyebrow::before { content:''; width:20px; height:1.5px; background:var(--blue); }
-
-.blog-hero h1 {
-  font-family:var(--font-d);
-  font-size:clamp(2.2rem,4vw,3.2rem);
-  font-weight:800; line-height:1.08; letter-spacing:-0.02em;
-  margin-bottom:1rem;
-}
-.blog-hero h1 em { font-style:italic; color:var(--blue); font-family:var(--font-b); font-weight:300; }
-.blog-hero p { font-size:1rem; color:var(--ink-60); max-width:540px; margin-bottom:2.5rem; }
+.blog-hero{padding:7rem 5vw 0;max-width:1100px;margin:0 auto;animation:fadeUp 0.7s var(--ease) both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.eyebrow{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;}
+.eyebrow::before{content:'';width:20px;height:1.5px;background:var(--blue);}
+.blog-hero h1{font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;line-height:1.08;letter-spacing:-0.02em;margin-bottom:0.7rem;}
+.blog-hero h1 em{font-style:italic;color:var(--blue);font-family:var(--font-b);font-weight:400;}
+.blog-hero > p{font-size:0.92rem;color:var(--ink-60);max-width:500px;margin-bottom:1.8rem;}
 
 /* ── FILTERS ── */
-.filters {
-  display:flex; gap:0.6rem; flex-wrap:wrap;
-  padding-bottom:2.5rem;
-  border-bottom:1px solid var(--border);
-  margin-bottom:3rem;
-}
-.filter-btn {
-  padding:0.4rem 1rem;
-  border-radius:100px;
-  border:1.5px solid var(--border);
-  background:transparent;
-  font-family:var(--font-b);
-  font-size:0.78rem; font-weight:600;
-  color:var(--ink-60);
-  cursor:pointer;
-  transition:all 0.2s;
-}
-.filter-btn:hover { border-color:var(--blue); color:var(--blue); background:var(--blue-10); }
-.filter-btn.active { background:var(--blue); border-color:var(--blue); color:#fff; }
+.filters{display:flex;gap:0.5rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid var(--border);margin-bottom:2.5rem;}
+.filter-btn{padding:0.38rem 0.95rem;border-radius:100px;border:1.5px solid var(--border);background:transparent;font-family:var(--font-b);font-size:0.78rem;font-weight:600;color:var(--ink-60);cursor:pointer;transition:all 0.18s;}
+.filter-btn:hover{border-color:rgba(24,119,242,0.35);color:var(--blue);}
+.filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff;}
 
-/* ── FEATURED ARTICLE ── */
-.featured {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:0; background:var(--white);
-  border:1px solid var(--border); border-radius:16px;
-  overflow:hidden; margin-bottom:2rem;
-  transition:all 0.25s var(--ease); text-decoration:none; color:inherit;
-  animation: fadeUp 0.8s var(--ease) 0.2s both;
-}
-.featured:hover { border-color:var(--border-hover); transform:translateY(-3px); box-shadow:0 16px 48px rgba(12,12,20,0.08); }
-
-.featured-visual {
-  background:var(--ink);
-  min-height:320px;
-  display:flex; align-items:center; justify-content:center;
-  position:relative; overflow:hidden;
-}
-.featured-visual::before {
-  content:'';
-  position:absolute; inset:0;
-  background:radial-gradient(ellipse at 30% 50%, rgba(24,119,242,0.25) 0%, transparent 65%),
-             radial-gradient(ellipse at 80% 20%, rgba(245,166,35,0.1) 0%, transparent 50%);
-}
-.featured-icon {
-  font-size:4rem; position:relative; z-index:1;
-  filter:drop-shadow(0 0 24px rgba(24,119,242,0.4));
-}
-
-.featured-content { padding:2.5rem; display:flex; flex-direction:column; justify-content:center; }
-
-.featured-tag {
-  display:inline-flex; align-items:center; gap:0.4rem;
-  background:var(--gold-10); border:1px solid rgba(245,166,35,0.3);
-  color:#B8760A; font-size:0.68rem; font-weight:800;
-  letter-spacing:0.1em; text-transform:uppercase;
-  padding:0.25rem 0.75rem; border-radius:100px;
-  margin-bottom:1rem; width:fit-content;
-}
-
-.featured-content h2 {
-  font-family:var(--font-d);
-  font-size:1.5rem; font-weight:800; line-height:1.15; margin-bottom:0.8rem;
-}
-.featured-content p { font-size:0.875rem; color:var(--ink-60); line-height:1.75; margin-bottom:1.5rem; }
-
-.article-meta-row {
-  display:flex; align-items:center; gap:1.2rem;
-  font-size:0.75rem; color:var(--ink-60);
-}
-.read-time { display:flex; align-items:center; gap:0.3rem; }
-.article-date { color:var(--ink-60); }
-
-.read-link {
-  display:inline-flex; align-items:center; gap:0.4rem;
-  font-size:0.82rem; font-weight:700; color:var(--blue);
-  text-decoration:none; margin-top:1.2rem;
-  transition:gap 0.2s;
-}
-.read-link:hover { gap:0.7rem; }
+/* ── FEATURED ── */
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1.5rem;text-decoration:none;color:inherit;transition:all 0.22s var(--ease);}
+.featured:hover{border-color:rgba(24,119,242,0.25);transform:translateY(-2px);box-shadow:0 10px 36px rgba(12,12,20,0.08);}
+.feat-visual{background:var(--ink);min-height:260px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.feat-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(24,119,242,0.22) 0%,transparent 65%);}
+.feat-emoji{font-size:3.5rem;position:relative;z-index:1;}
+.feat-content{padding:2rem;display:flex;flex-direction:column;justify-content:center;}
+.feat-tag{display:inline-flex;background:var(--gold-10);border:1px solid rgba(245,166,35,0.28);color:#9A6500;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0.22rem 0.7rem;border-radius:4px;margin-bottom:0.8rem;width:fit-content;}
+.feat-content h2{font-family:var(--font-d);font-size:1.2rem;font-weight:800;line-height:1.2;margin-bottom:0.6rem;}
+.feat-content p{font-size:0.85rem;color:var(--ink-60);line-height:1.7;margin-bottom:1.2rem;}
+.feat-meta{display:flex;align-items:center;gap:1.2rem;font-size:0.75rem;color:var(--ink-30);}
+.feat-link{font-size:0.82rem;font-weight:700;color:var(--blue);margin-top:0.8rem;display:inline-flex;align-items:center;gap:0.3rem;transition:gap 0.2s;}
+.featured:hover .feat-link{gap:0.6rem;}
 
 /* ── ARTICLES GRID ── */
-.articles-grid {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:1.2rem;
-  margin-bottom:3rem;
-}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;max-width:1100px;margin-left:auto;margin-right:auto;}
+.article-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:all 0.22s var(--ease);display:flex;flex-direction:column;}
+.article-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(12,12,20,0.08);border-color:rgba(24,119,242,0.22);}
+.card-visual{height:140px;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.card-emoji{font-size:2.2rem;position:relative;z-index:1;}
+.cv1::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 35% 50%,rgba(24,119,242,0.18) 0%,transparent 60%);}
+.cv2::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 65% 35%,rgba(245,166,35,0.13) 0%,transparent 60%);}
+.cv3::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,rgba(24,119,242,0.22) 0%,transparent 60%);}
+.cv4::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(245,166,35,0.18) 0%,transparent 60%);}
+.cv5::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 60% 50%,rgba(24,119,242,0.16) 0%,transparent 60%);}
+.cv6::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 40% 30%,rgba(245,166,35,0.11) 0%,transparent 60%);}
+.card-body{padding:1.3rem;flex:1;display:flex;flex-direction:column;gap:0.5rem;}
+.card-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--blue);}
+.card-body h3{font-family:var(--font-d);font-size:0.9rem;font-weight:800;line-height:1.3;flex:1;}
+.card-body p{font-size:0.8rem;color:var(--ink-60);line-height:1.6;}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.3rem;border-top:1px solid var(--border);font-size:0.72rem;color:var(--ink-30);}
+.card-arrow{color:var(--blue);font-weight:700;transition:transform 0.2s;}
+.article-card:hover .card-arrow{transform:translateX(3px);}
 
-.article-card {
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:14px;
-  overflow:hidden;
-  text-decoration:none; color:inherit;
-  transition:all 0.25s var(--ease);
-  display:flex; flex-direction:column;
-}
-.article-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(12,12,20,0.08); border-color:var(--border-hover); }
+/* ── BLOG CTA ── */
+.blog-cta{background:var(--ink);border-radius:12px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;max-width:1100px;margin:0 auto;}
+.blog-cta h3{font-family:var(--font-d);font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:0.3rem;}
+.blog-cta p{font-size:0.85rem;color:rgba(255,255,255,0.5);}
+.btn-sm{display:inline-flex;background:var(--blue);color:#fff;padding:0.7rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.85rem;transition:all 0.2s;white-space:nowrap;}
+.btn-sm:hover{background:#1469d6;transform:translateY(-1px);}
 
-.card-visual {
-  height:160px;
-  background:var(--ink);
-  display:flex; align-items:center; justify-content:center;
-  position:relative; overflow:hidden;
-}
-.card-visual .card-emoji { font-size:2.5rem; position:relative; z-index:1; }
+.blog-body{padding:0 5vw 5rem;}
 
-.cv1::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 50%, rgba(24,119,242,0.2) 0%, transparent 60%); }
-.cv2::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 70% 30%, rgba(245,166,35,0.15) 0%, transparent 60%); }
-.cv3::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 60%, rgba(24,119,242,0.25) 0%, transparent 60%); }
-.cv4::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 40%, rgba(245,166,35,0.2) 0%, transparent 60%); }
-.cv5::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 60% 50%, rgba(24,119,242,0.18) 0%, transparent 60%); }
-.cv6::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 40% 30%, rgba(245,166,35,0.12) 0%, transparent 60%); }
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:3rem;color:var(--ink-30);font-size:0.9rem;display:none;}
 
-.card-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; }
+footer{background:var(--ink);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.38);}
+.f-links{display:flex;gap:1.75rem;flex-wrap:wrap;}.f-links a{font-size:0.75rem;color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.2s;}.f-links a:hover{color:rgba(255,255,255,0.85);}
 
-.card-tag {
-  font-size:0.65rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase;
-  color:var(--blue); margin-bottom:0.6rem;
-}
-
-.card-body h3 {
-  font-family:var(--font-d);
-  font-size:0.95rem; font-weight:700; line-height:1.3;
-  margin-bottom:0.6rem;
-}
-.card-body p { font-size:0.8rem; color:var(--ink-60); line-height:1.6; flex:1; }
-
-.card-footer {
-  display:flex; align-items:center; justify-content:space-between;
-  margin-top:1.2rem; padding-top:1rem;
-  border-top:1px solid var(--border);
-  font-size:0.72rem; color:var(--ink-60);
-}
-.card-arrow { color:var(--blue); font-weight:700; font-size:0.85rem; transition:transform 0.2s; }
-.article-card:hover .card-arrow { transform:translateX(3px); }
-
-/* ── NEWSLETTER / CTA ── */
-.blog-cta {
-  background:var(--ink);
-  border-radius:16px;
-  padding:3rem 3.5rem;
-  display:flex; align-items:center; justify-content:space-between;
-  gap:2rem; flex-wrap:wrap;
-  margin-bottom:5rem;
-}
-.blog-cta h3 { font-family:var(--font-d); font-size:1.4rem; font-weight:800; color:#fff; margin-bottom:0.4rem; }
-.blog-cta p { font-size:0.875rem; color:rgba(255,255,255,0.5); }
-.cta-btn {
-  display:inline-flex; align-items:center; gap:0.5rem;
-  background:var(--blue); color:#fff;
-  padding:0.9rem 2rem; border-radius:100px;
-  text-decoration:none; font-weight:700; font-size:0.9rem;
-  white-space:nowrap; transition:all 0.2s var(--ease);
-}
-.cta-btn:hover { background:#1469d6; transform:translateY(-2px); box-shadow:0 8px 24px rgba(24,119,242,0.3); }
-
-/* ── FOOTER ── */
-footer { background:var(--ink); padding:2rem 5vw; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
-footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
-.f-links { display:flex; gap:2rem; }
-.f-links a { font-size:0.78rem; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.2s; }
-.f-links a:hover { color:#fff; }
-
-/* ── REVEAL ── */
-.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s var(--ease), transform 0.6s var(--ease); }
-.reveal.on { opacity:1; transform:translateY(0); }
-.d1{transition-delay:0.08s;} .d2{transition-delay:0.16s;} .d3{transition-delay:0.24s;}
-.d4{transition-delay:0.32s;} .d5{transition-delay:0.40s;} .d6{transition-delay:0.48s;}
-
-@media(max-width:820px) {
-  nav ul { display:none; }
-  .featured { grid-template-columns:1fr; }
-  .featured-visual { min-height:180px; }
-  .articles-grid { grid-template-columns:1fr; }
-  .blog-cta { flex-direction:column; text-align:center; padding:2rem; }
+@media(max-width:820px){
+  nav ul{display:none;}
+  .featured{grid-template-columns:1fr;}
+  .feat-visual{min-height:160px;}
+  .articles-grid{grid-template-columns:1fr;}
+  .blog-cta{flex-direction:column;text-align:center;}
 }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <a href="/DG_MetaAds/" class="logo">DG<span class="dot">.</span>META</a>
   <ul>
     <li><a href="/DG_MetaAds/">Accueil</a></li>
     <li><a href="/DG_MetaAds/media-buyer.html">Media Buyer ?</a></li>
     <li><a href="/DG_MetaAds/services.html">Services</a></li>
-    <li><a href="/DG_MetaAds/blog.html">Blog</a></li>
+    <li><a href="/DG_MetaAds/blog.html" class="active">Blog</a></li>
     <li><a href="/DG_MetaAds/faq.html">FAQ</a></li>
     <li><a href="/DG_MetaAds/a-propos.html">Qui je suis</a></li>
     <li><a href="/DG_MetaAds/contact.html" class="nav-cta">Audit gratuit</a></li>
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
 <div class="blog-hero">
   <p class="eyebrow">Blog</p>
   <h1>Guides & conseils<br><em>Meta Ads</em> pour votre business</h1>
-  <p>Stratégie, acquisition, génération de leads — des articles concrets pour comprendre et exploiter Meta Ads à votre avantage.</p>
-
-  <!-- FILTERS -->
+  <p>Stratégie, acquisition, génération de leads — des articles concrets pour exploiter Meta Ads à votre avantage.</p>
   <div class="filters">
     <button class="filter-btn active" data-cat="tous">Tous</button>
     <button class="filter-btn" data-cat="meta-ads">Meta Ads</button>
@@ -273,22 +120,24 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
     <button class="filter-btn" data-cat="prospection">Prospection</button>
     <button class="filter-btn" data-cat="bonnes-pratiques">Bonnes pratiques</button>
   </div>
+</div>
+
+<div class="blog-body">
 
   <!-- FEATURED -->
-  <a href="/DG_MetaAds/article-erreurs-pme.html" class="featured" data-cat="meta-ads">
-    <div class="featured-visual">
-      <span class="featured-icon">📣</span>
+  <a href="/DG_MetaAds/article-erreurs-pme.html" class="featured reveal" data-cat="meta-ads">
+    <div class="feat-visual">
+      <span class="feat-emoji">📣</span>
     </div>
-    <div class="featured-content">
-      <div class="featured-tag">✦ Article à la une</div>
+    <div class="feat-content">
+      <div class="feat-tag">✦ À la une</div>
       <h2>3 erreurs que font les PME sur Meta Ads (et comment les éviter)</h2>
-      <p>Booster une publication, cibler tout le monde, couper les campagnes trop vite… Ces erreurs détruisent votre budget publicitaire chaque jour. Voici comment les corriger une bonne fois pour toutes.</p>
-      <div class="article-meta-row">
-        <span class="article-date">📅 26 mai 2025</span>
-        <span class="read-time">⏱ 4 min de lecture</span>
-        <span>#MetaAds #PME</span>
+      <p>Booster une publication, cibler tout le monde, couper les campagnes trop vite… Ces erreurs détruisent votre budget publicitaire. Voici comment les corriger.</p>
+      <div class="feat-meta">
+        <span>📅 26 mai 2025</span>
+        <span>⏱ 4 min</span>
       </div>
-      <span class="read-link">Lire l'article →</span>
+      <span class="feat-link">Lire l'article →</span>
     </div>
   </a>
 
@@ -299,94 +148,76 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
       <div class="card-visual cv1"><span class="card-emoji">💰</span></div>
       <div class="card-body">
         <p class="card-tag">Bonnes pratiques</p>
-        <h3>Pourquoi Meta Ads est le levier publicitaire le plus puissant pour les TPE/PME</h3>
-        <p>Ciblage précis, coût accessible, audience massive — 3 milliards d'utilisateurs actifs. Voici pourquoi Facebook & Instagram Ads surpassent presque tous les autres canaux pour les petites structures.</p>
-        <div class="card-footer">
-          <span>14 mai 2025 · 5 min</span>
-          <span class="card-arrow">→</span>
-        </div>
+        <h3>Pourquoi Meta Ads est le levier le plus puissant pour les TPE/PME</h3>
+        <p>3 milliards d'utilisateurs, ciblage précis, coût accessible.</p>
       </div>
+      <div class="card-footer"><span>14 mai 2025 · 5 min</span><span class="card-arrow">→</span></div>
     </a>
 
     <a href="/DG_MetaAds/article-leads-qualifies.html" class="article-card reveal d1" data-cat="leads">
       <div class="card-visual cv2"><span class="card-emoji">🎯</span></div>
       <div class="card-body">
         <p class="card-tag">Génération de leads</p>
-        <h3>Comment générer des leads qualifiés avec Meta Ads sans exploser son budget</h3>
-        <p>Lead Ads, landing page, audience lookalike… Les bonnes combinaisons pour remplir votre pipeline commercial à coût maîtrisé, même avec 300€/mois de budget pub.</p>
-        <div class="card-footer">
-          <span>1 mai 2025 · 6 min</span>
-          <span class="card-arrow">→</span>
-        </div>
+        <h3>Comment générer des leads qualifiés sans exploser son budget</h3>
+        <p>Lead Ads, landing page, lookalike — les bonnes combinaisons.</p>
       </div>
+      <div class="card-footer"><span>1 mai 2025 · 6 min</span><span class="card-arrow">→</span></div>
     </a>
 
     <a href="/DG_MetaAds/article-algorithme-meta.html" class="article-card reveal d2" data-cat="meta-ads">
       <div class="card-visual cv3"><span class="card-emoji">⚙️</span></div>
       <div class="card-body">
         <p class="card-tag">Meta Ads</p>
-        <h3>Comment fonctionnent vraiment les publicités Meta ? L'algorithme expliqué simplement</h3>
-        <p>Enchères, score de pertinence, phase d'apprentissage, Advantage+… Comprendre le moteur Meta Ads, c'est déjà gagner sur vos concurrents qui l'ignorent.</p>
-        <div class="card-footer">
-          <span>18 avril 2025 · 7 min</span>
-          <span class="card-arrow">→</span>
-        </div>
+        <h3>Comment fonctionne vraiment l'algorithme Meta Ads ?</h3>
+        <p>Enchères, phase d'apprentissage, Advantage+ — expliqués simplement.</p>
       </div>
+      <div class="card-footer"><span>18 avril 2025 · 7 min</span><span class="card-arrow">→</span></div>
     </a>
 
     <a href="/DG_MetaAds/article-prospection.html" class="article-card reveal d3" data-cat="prospection">
       <div class="card-visual cv4"><span class="card-emoji">📞</span></div>
       <div class="card-body">
         <p class="card-tag">Prospection</p>
-        <h3>Utiliser Meta Ads pour prospecter : la méthode qui remplace la prospection à froid</h3>
-        <p>Fini les appels à froid et les emails ignorés. Voici comment construire un système de prospection semi-automatisé sur Meta qui vous amène des prospects chauds en continu.</p>
-        <div class="card-footer">
-          <span>4 avril 2025 · 5 min</span>
-          <span class="card-arrow">→</span>
-        </div>
+        <h3>Meta Ads pour prospecter : remplacer la prospection à froid</h3>
+        <p>Un système semi-automatisé qui vous amène des prospects chauds.</p>
       </div>
+      <div class="card-footer"><span>4 avril 2025 · 5 min</span><span class="card-arrow">→</span></div>
     </a>
 
     <a href="/DG_MetaAds/article-metriques.html" class="article-card reveal d4" data-cat="strategie">
       <div class="card-visual cv5"><span class="card-emoji">📊</span></div>
       <div class="card-body">
         <p class="card-tag">Stratégie</p>
-        <h3>ROAS, CPA, CPM : les 5 métriques Meta Ads que vous devez vraiment surveiller</h3>
-        <p>Arrêtez de vous noyer dans les données. Ces 5 indicateurs suffisent à savoir si vos campagnes sont rentables — et quand il faut intervenir.</p>
-        <div class="card-footer">
-          <span>21 mars 2025 · 4 min</span>
-          <span class="card-arrow">→</span>
-        </div>
+        <h3>ROAS, CPA, CPM : les 5 métriques à vraiment surveiller</h3>
+        <p>Ces 5 indicateurs suffisent à piloter vos campagnes intelligemment.</p>
       </div>
+      <div class="card-footer"><span>21 mars 2025 · 4 min</span><span class="card-arrow">→</span></div>
     </a>
 
     <a href="/DG_MetaAds/article-retargeting.html" class="article-card reveal d5" data-cat="leads">
       <div class="card-visual cv6"><span class="card-emoji">🔁</span></div>
       <div class="card-body">
         <p class="card-tag">Génération de leads</p>
-        <h3>Retargeting Meta Ads : comment récupérer 70% de vos visiteurs perdus</h3>
-        <p>La plupart des visiteurs de votre site n'achètent pas au premier passage. Le retargeting bien structuré peut multiplier vos conversions par 3 sans augmenter votre budget.</p>
-        <div class="card-footer">
-          <span>26 mars 2025 · 5 min</span>
-          <span class="card-arrow">→</span>
-        </div>
+        <h3>Retargeting : récupérer 70% de vos visiteurs perdus</h3>
+        <p>Le retargeting bien structuré peut multiplier vos conversions par 3.</p>
       </div>
+      <div class="card-footer"><span>26 mars 2025 · 5 min</span><span class="card-arrow">→</span></div>
     </a>
 
   </div>
 
-  <!-- CTA -->
+  <div class="empty-state" id="empty">Aucun article dans cette catégorie pour l'instant.</div>
+
   <div class="blog-cta reveal">
     <div>
       <h3>Vos campagnes ne performent pas comme vous le souhaitez ?</h3>
-      <p>Je vous offre un audit complet de vos Meta Ads — rapport détaillé livré en 48h, sans engagement.</p>
+      <p>Audit complet et gratuit de vos Meta Ads — livré en 48h, sans engagement.</p>
     </div>
-    <a href="/DG_MetaAds/contact.html" class="cta-btn">🎯 Demander mon audit gratuit</a>
+    <a href="/DG_MetaAds/contact.html" class="btn-sm">🎯 Audit gratuit</a>
   </div>
 
 </div>
 
-<!-- ── FOOTER ── -->
 <footer>
   <p>© 2025 <strong style="color:rgba(255,255,255,0.7)">Dorian Guyomard</strong> — Media Buyer Meta Ads · Région orléanaise</p>
   <div class="f-links">
@@ -395,27 +226,33 @@ footer p { font-size:0.78rem; color:rgba(255,255,255,0.4); }
 </footer>
 
 <script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+// Scroll animations
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add("on");obs.unobserve(el.target);}});},{threshold:0.1});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 
-  // Filtres fonctionnels
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      // cards
-      document.querySelectorAll('.article-card').forEach(card => {
-        card.style.display = (cat === 'tous' || card.dataset.cat === cat) ? '' : 'none';
-      });
-      // featured
-      const feat = document.querySelector('.featured');
-      if(feat) feat.style.display = (cat === 'tous' || feat.dataset.cat === cat) ? '' : 'none';
+// Filtres fonctionnels
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    // Active state
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+
+    // Featured
+    const feat = document.querySelector('.featured');
+    if(feat) feat.style.display = (cat==='tous' || feat.dataset.cat===cat) ? '' : 'none';
+
+    // Cards
+    let visible = 0;
+    document.querySelectorAll('.article-card').forEach(card=>{
+      const show = cat==='tous' || card.dataset.cat===cat;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
     });
-  });
-</script>
 
-</body>
-</html>
+    // Empty state
+    document.getElementById('empty').style.display = visible===0 && cat!=='tous' ? 'block' : 'none';
+  });
+});
+</script>
+</body></html>

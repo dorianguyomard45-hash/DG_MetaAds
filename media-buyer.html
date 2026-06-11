@@ -3,156 +3,74 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>C'est quoi un Media Buyer Meta Ads ? — Dorian Guyomard</title>
-<meta name="description" content="Comprendre le rôle d'un media buyer Meta Ads, ce qu'il apporte concrètement à une entreprise, et pourquoi c'est un levier de croissance sous-estimé.">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --cream:#F7F6F2;--white:#FFFFFF;--ink:#0C0C14;
-  --ink-60:rgba(12,12,20,0.52);--ink-30:rgba(12,12,20,0.28);
-  --blue:#1877F2;--blue-10:rgba(24,119,242,0.08);--blue-20:rgba(24,119,242,0.15);
-  --gold:#F5A623;--gold-10:rgba(245,166,35,0.09);
-  --border:rgba(12,12,20,0.09);
-  --font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;
-  --ease:cubic-bezier(0.22,1,0.36,1);
-}
+:root{--cream:#F7F6F2;--white:#FFFFFF;--ink:#0C0C14;--ink-60:rgba(12,12,20,0.55);--ink-30:rgba(12,12,20,0.28);--blue:#1877F2;--blue-10:rgba(24,119,242,0.09);--gold:#F5A623;--gold-10:rgba(245,166,35,0.1);--border:rgba(12,12,20,0.1);--font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;--ease:cubic-bezier(0.22,1,0.36,1);}
 html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--ink);font-family:var(--font-b);font-size:15px;line-height:1.7;overflow-x:hidden;}
 ::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-thumb{background:var(--blue);}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(247,246,242,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.logo{font-family:var(--font-d);font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:0.01em;}
-.logo .dot{color:var(--blue);}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;}.logo .dot{color:var(--blue);}
 nav ul{display:flex;gap:1.75rem;list-style:none;align-items:center;}
-nav a{color:var(--ink-60);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s;letter-spacing:0.01em;}
+nav a{color:var(--ink-60);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s;}
 nav a:hover,nav a.active{color:var(--ink);}
-.nav-cta{background:var(--blue)!important;color:#fff!important;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.8rem;transition:opacity 0.2s!important;}
-.nav-cta:hover{opacity:0.87;}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.8rem;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}.reveal.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.07s;}.d2{transition-delay:0.14s;}.d3{transition-delay:0.21s;}
 
-/* LAYOUT */
-.page-wrap{max-width:1080px;margin:0 auto;padding:0 5vw;}
-.section{padding:6rem 5vw;}
+/* HERO — same as blog */
+.page-hero{padding:7rem 5vw 2.5rem;max-width:680px;margin:0 auto;animation:fadeUp 0.7s var(--ease) both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.eyebrow{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;}
+.eyebrow::before{content:'';width:20px;height:1.5px;background:var(--blue);}
+.page-hero h1{font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;line-height:1.08;letter-spacing:-0.02em;margin-bottom:0.9rem;}
+.page-hero h1 em{font-style:italic;color:var(--blue);font-family:var(--font-b);font-weight:400;}
+.page-hero p{font-size:0.95rem;color:var(--ink-60);max-width:520px;line-height:1.75;}
 
-/* TYPOGRAPHY */
-h1{font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;line-height:1.07;letter-spacing:-0.025em;color:var(--ink);}
-h2{font-family:var(--font-d);font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:800;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);}
-h3{font-family:var(--font-d);font-size:0.92rem;font-weight:700;color:var(--ink);}
-p{font-size:0.92rem;color:var(--ink-60);line-height:1.75;}
+/* BODY */
+.body-wrap{padding:0 5vw 6rem;max-width:900px;margin:0 auto;}
+h2{font-family:var(--font-d);font-size:1.1rem;font-weight:800;color:var(--ink);margin-bottom:0.8rem;}
+p{font-size:0.92rem;color:var(--ink-60);line-height:1.8;margin-bottom:0.8rem;}
 strong{color:var(--ink);font-weight:600;}
 
-/* PILL / EYEBROW */
-.eyebrow{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:0.9rem;}
-.eyebrow::before{content:'';width:16px;height:1.5px;background:var(--blue);}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.75rem 1.6rem;font-family:var(--font-b);font-size:0.85rem;font-weight:600;border-radius:6px;text-decoration:none;cursor:pointer;border:none;transition:all 0.2s var(--ease);letter-spacing:0.01em;}
-.btn-primary{background:var(--blue);color:#fff;}
-.btn-primary:hover{background:#1469d6;transform:translateY(-1px);box-shadow:0 6px 20px rgba(24,119,242,0.25);}
-.btn-secondary{background:var(--white);color:var(--ink);border:1.5px solid var(--border);}
-.btn-secondary:hover{border-color:rgba(12,12,20,0.25);background:var(--white);}
-.btn-row{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;}
-
-/* CARDS */
-.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:all 0.22s var(--ease);}
-.card:hover{border-color:rgba(24,119,242,0.25);transform:translateY(-2px);box-shadow:0 8px 28px rgba(12,12,20,0.07);}
-
-/* DIVIDER */
-.divider{height:1px;background:var(--border);margin:0;}
-
-/* FOOTER */
-footer{background:var(--ink);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
-footer p{font-size:0.75rem;color:rgba(255,255,255,0.38);}
-.f-links{display:flex;gap:1.75rem;flex-wrap:wrap;}
-.f-links a{font-size:0.75rem;color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.2s;}
-.f-links a:hover{color:rgba(255,255,255,0.85);}
-
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}
-.reveal.on{opacity:1;transform:translateY(0);}
-.d1{transition-delay:0.07s;}.d2{transition-delay:0.14s;}.d3{transition-delay:0.21s;}.d4{transition-delay:0.28s;}
-
-/* MOBILE */
-@media(max-width:768px){
-  nav ul{display:none;}
-  h1{font-size:2rem;}
-  h2{font-size:1.5rem;}
-  .section{padding:4rem 5vw;}
-}
-
-
-to{opacity:1;transform:translateY(0);}}
-
-
-
-.body-wrap{padding:0 5vw 6rem;max-width:860px;margin:0 auto;}
-
-/* DEFINITION BLOCK */
-.def-block{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem;position:relative;overflow:hidden;}
+.def-block{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;margin-bottom:1.2rem;position:relative;overflow:hidden;}
 .def-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--gold));}
-.def-block h2{font-family:var(--font-d) !important;font-size:1.1rem;font-weight:800;margin-bottom:0.9rem;color:var(--ink);}
-.def-block p{font-size:0.92rem;color:var(--ink-60);line-height:1.8;margin-bottom:0.8rem;}
-.def-block p:last-child{margin-bottom:0;}
-.def-block strong{color:var(--ink);}
 
-/* VS BLOCK */
-.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;}
-.vs-card{border-radius:12px;padding:1.5rem;border:1px solid var(--border);}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+.vs-card{border-radius:12px;padding:1.4rem;border:1px solid var(--border);}
 .vs-card.bad{background:rgba(255,80,80,0.04);border-color:rgba(255,80,80,0.15);}
 .vs-card.good{background:var(--blue-10);border-color:rgba(24,119,242,0.2);}
-.vs-label{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.4rem;}
+.vs-label{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
 .vs-card.bad .vs-label{color:#D94040;}
 .vs-card.good .vs-label{color:var(--blue);}
-.vs-list{display:flex;flex-direction:column;gap:0.5rem;}
-.vs-item{display:flex;align-items:flex-start;gap:0.5rem;font-size:0.85rem;color:var(--ink-60);line-height:1.6;}
-.vs-ico{flex-shrink:0;margin-top:2px;}
+.vs-list{display:flex;flex-direction:column;gap:0.45rem;}
+.vs-item{font-size:0.85rem;color:var(--ink-60);padding-left:0.8rem;position:relative;line-height:1.55;}
+.vs-item::before{content:'·';position:absolute;left:0;color:var(--blue);}
+.vs-card.bad .vs-item::before{color:#D94040;}
 
-/* WHAT SECTION */
-.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;}
-.what-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.7rem;transition:all 0.22s var(--ease);}
-.what-card:hover{border-color:rgba(24,119,242,0.25);transform:translateY(-2px);box-shadow:0 6px 20px rgba(12,12,20,0.06);}
-.what-icon{width:36px;height:36px;border-radius:8px;background:var(--blue-10);border:1px solid rgba(24,119,242,0.18);display:flex;align-items:center;justify-content:center;font-size:1rem;}
-.what-card h3{font-family:var(--font-d);font-size:0.9rem;font-weight:800;}
-.what-card p{font-size:0.83rem;color:var(--ink-60);line-height:1.65;}
-
-/* EXAMPLE BLOCK */
-.example-wrap{background:var(--ink);border-radius:12px;padding:2.5rem;margin-bottom:2rem;}
-.example-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.5rem;}
-.example-wrap h2{font-family:var(--font-d) !important;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:1rem;}
-.example-story{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:1.5rem;}
-.example-story strong{color:#fff;}
-.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
-.metric{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:1rem;text-align:center;}
-.metric-val{font-family:var(--font-d);font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1;}
-.metric-label{font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;}
-.metric-delta{font-size:0.72rem;color:#4ADE80;margin-top:0.2rem;font-weight:600;}
-
-/* SUMMARY */
-.summary-block{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem;}
-.summary-block h2{font-family:var(--font-d);font-size:1.1rem;font-weight:800;margin-bottom:1.2rem;}
-.summary-list{display:flex;flex-direction:column;gap:0.6rem;}
-.s-item{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.88rem;color:var(--ink-60);}
-.s-dot{width:18px;height:18px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:700;flex-shrink:0;margin-top:1px;}
+.example-wrap{background:var(--ink);border-radius:12px;padding:2rem;margin-bottom:1.2rem;}
+.example-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem;}
+.example-wrap h2{color:#fff;}
+.example-wrap p{color:rgba(255,255,255,0.58);margin-bottom:1.2rem;}
+.example-wrap strong{color:#fff;}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;}
+.metric{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.9rem;text-align:center;}
+.metric-val{font-family:var(--font-d);font-size:1.4rem;font-weight:800;color:var(--gold);line-height:1;}
+.metric-label{font-size:0.7rem;color:rgba(255,255,255,0.4);margin-top:0.25rem;}
+.metric-delta{font-size:0.7rem;color:#4ADE80;margin-top:0.15rem;font-weight:600;}
 
 .cta-strip{background:var(--blue);border-radius:12px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
 .cta-strip h3{font-family:var(--font-d);font-size:1rem;font-weight:800;color:#fff;margin-bottom:0.2rem;}
-.cta-strip p{font-size:0.83rem;color:rgba(255,255,255,0.7);}
+.cta-strip p{font-size:0.83rem;color:rgba(255,255,255,0.7);margin:0;}
 .btn-white{display:inline-flex;align-items:center;background:#fff;color:var(--blue);padding:0.7rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.85rem;transition:all 0.2s;white-space:nowrap;}
 .btn-white:hover{background:var(--cream);transform:translateY(-1px);}
 
-@media(max-width:640px){
-  nav ul{display:none;}
-  .vs-grid,.what-grid,.metrics-row{grid-template-columns:1fr;}
-  .cta-strip{flex-direction:column;text-align:center;}
-}
+footer{background:var(--ink);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.38);}
+.f-links{display:flex;gap:1.75rem;flex-wrap:wrap;}.f-links a{font-size:0.75rem;color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.2s;}.f-links a:hover{color:rgba(255,255,255,0.85);}
 
-.page-hero{padding:7rem 5vw 2.5rem;max-width:680px;margin:0 auto;animation:fadeUp 0.7s var(--ease) both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-.page-hero .eyebrow{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;}
-.page-hero .eyebrow::before{content:'';width:20px;height:1.5px;background:var(--blue);}
-.page-hero h1{font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;line-height:1.08;letter-spacing:-0.02em;margin-bottom:0.9rem;}
-.page-hero h1 span{color:var(--blue);}
-.page-hero p{font-size:0.95rem;color:var(--ink-60);max-width:520px;margin:0 0 0.5rem;line-height:1.75;}
+@media(max-width:640px){nav ul{display:none;}.vs-grid,.metrics-row{grid-template-columns:1fr;}.cta-strip{flex-direction:column;text-align:center;}}
 </style>
 </head>
 <body>
@@ -171,116 +89,71 @@ to{opacity:1;transform:translateY(0);}}
 
 <div class="page-hero">
   <p class="eyebrow">Le métier</p>
-  <h1>C'est quoi un <span style="color:var(--blue)">Media Buyer</span> Meta Ads ?</h1>
-  <p>Et surtout — qu'est-ce que ça peut apporter concrètement à votre entreprise ?</p>
+  <h1>C'est quoi un<br><em>Media Buyer</em> Meta Ads ?</h1>
+  <p>Et ce que ça peut apporter concrètement à votre entreprise.</p>
 </div>
 
 <div class="body-wrap">
 
-  <!-- DEFINITION -->
   <div class="def-block reveal">
     <h2>La définition simple</h2>
-    <p>Un media buyer est la personne qui <strong>achète et pilote des espaces publicitaires</strong> pour le compte d'une entreprise. Sur Meta (Facebook & Instagram), cela signifie gérer les campagnes publicitaires dans Ads Manager — le tableau de bord qui permet de diffuser des pubs à des millions de personnes ciblées.</p>
-    <p>Son rôle n'est pas de "faire de jolies pubs". Son rôle est de s'assurer que chaque euro investi en publicité génère le meilleur retour possible — plus de leads, plus de ventes, plus de clients — en pilotant les données chaque jour.</p>
+    <p>Un media buyer pilote vos campagnes publicitaires Facebook & Instagram pour maximiser chaque euro investi. Son rôle n'est pas de "faire de jolies pubs" — c'est de s'assurer que <strong>chaque euro dépensé génère le meilleur retour possible</strong> : leads, ventes, clients.</p>
+    <p>Il gère les audiences, les créatifs, les budgets et les enchères dans Meta Ads Manager — chaque jour, en regardant les données.</p>
   </div>
 
-  <!-- VS -->
   <div class="vs-grid reveal d1">
     <div class="vs-card bad">
       <p class="vs-label">❌ Sans media buyer</p>
       <div class="vs-list">
-        <div class="vs-item"><span class="vs-ico">·</span>Vous boostez des publications sans stratégie</div>
-        <div class="vs-item"><span class="vs-ico">·</span>Vous ne savez pas quelles audiences marchent</div>
-        <div class="vs-item"><span class="vs-ico">·</span>Votre budget part sans résultat mesurable</div>
-        <div class="vs-item"><span class="vs-ico">·</span>Vous gérez des outils que vous ne maîtrisez pas</div>
-        <div class="vs-item"><span class="vs-ico">·</span>Vous perdez du temps sur votre cœur de métier</div>
+        <div class="vs-item">Budget dépensé sans stratégie claire</div>
+        <div class="vs-item">Résultats aléatoires et non mesurés</div>
+        <div class="vs-item">Temps perdu sur des outils complexes</div>
+        <div class="vs-item">Opportunités manquées chaque semaine</div>
       </div>
     </div>
     <div class="vs-card good">
       <p class="vs-label">✓ Avec un media buyer</p>
       <div class="vs-list">
-        <div class="vs-item"><span class="vs-ico">·</span>Stratégie claire, chaque euro est optimisé</div>
-        <div class="vs-item"><span class="vs-ico">·</span>Audiences testées, données analysées</div>
-        <div class="vs-item"><span class="vs-ico">·</span>ROAS et CPA mesurés et améliorés chaque semaine</div>
-        <div class="vs-item"><span class="vs-ico">·</span>Un expert qui maîtrise les outils pour vous</div>
-        <div class="vs-item"><span class="vs-ico">·</span>Vous vous concentrez sur votre business</div>
+        <div class="vs-item">Stratégie claire, chaque euro optimisé</div>
+        <div class="vs-item">ROAS et CPA mesurés et améliorés</div>
+        <div class="vs-item">Un expert gère les outils pour vous</div>
+        <div class="vs-item">Vous vous concentrez sur votre métier</div>
       </div>
     </div>
   </div>
 
-  <!-- CE QU'IL FAIT -->
-  <div class="what-grid reveal d2">
-    <div class="what-card">
-      <div class="what-icon">🔬</div>
-      <h3>Analyser & structurer</h3>
-      <p>Audit du compte existant, restructuration des campagnes, installation du Pixel. La base avant tout.</p>
-    </div>
-    <div class="what-card">
-      <div class="what-icon">🎯</div>
-      <h3>Cibler & tester</h3>
-      <p>Audiences froides, lookalike, retargeting — chaque segment est testé et optimisé séparément.</p>
-    </div>
-    <div class="what-card">
-      <div class="what-icon">⚡</div>
-      <h3>Optimiser chaque jour</h3>
-      <p>Suivi quotidien des KPIs, ajustement des budgets, arrêt des ensembles qui sous-performent.</p>
-    </div>
-    <div class="what-card">
-      <div class="what-icon">📊</div>
-      <h3>Mesurer & reporter</h3>
-      <p>ROAS, CPA, CTR, fréquence — vous recevez un rapport clair chaque semaine. Vous savez ce que ça rapporte.</p>
-    </div>
-  </div>
-
-  <!-- EXEMPLE CONCRET -->
-  <div class="example-wrap reveal">
+  <div class="example-wrap reveal d2">
     <p class="example-label">✦ Exemple concret</p>
-    <h2>Une boutique de cosmétiques naturels — avant / après</h2>
-    <p class="example-story">
-      Une boutique e-commerce dans le secteur cosmétique dépensait <strong>800€/mois</strong> en publicité Meta en boostant ses publications directement depuis sa page. Les résultats étaient aléatoires, le CPA inconnu, et le ROAS estimé à 1,2x à peine rentable.
-      <br><br>
-      Après structuration complète du compte, mise en place d'un funnel 3 niveaux (notoriété → considération → conversion) et installation d'un retargeting sur les visiteurs panier abandonné, les résultats sur les 60 premiers jours :
-    </p>
+    <h2>Boutique cosmétiques — avant / après</h2>
+    <p>Une boutique e-commerce dépensait <strong>800€/mois</strong> en boostant ses publications. ROAS à 1,2x, résultats aléatoires. Après structuration complète (funnel 3 niveaux + retargeting panier abandonné) — résultats à 60 jours :</p>
     <div class="metrics-row">
       <div class="metric">
         <div class="metric-val">3,8×</div>
         <div class="metric-label">ROAS</div>
-        <div class="metric-delta">↑ vs 1,2× avant</div>
+        <div class="metric-delta">↑ vs 1,2×</div>
       </div>
       <div class="metric">
-        <div class="metric-val">-42%</div>
-        <div class="metric-label">Coût par vente</div>
+        <div class="metric-val">−42%</div>
+        <div class="metric-label">Coût/vente</div>
         <div class="metric-delta">↓ CPA réduit</div>
       </div>
       <div class="metric">
-        <div class="metric-val">+3×</div>
+        <div class="metric-val">×3</div>
         <div class="metric-label">Conversions</div>
-        <div class="metric-delta">↑ même budget</div>
+        <div class="metric-delta">même budget</div>
       </div>
       <div class="metric">
         <div class="metric-val">4,6%</div>
-        <div class="metric-label">CTR moyen</div>
-        <div class="metric-delta">↑ vs 1,1% avant</div>
+        <div class="metric-label">CTR</div>
+        <div class="metric-delta">↑ vs 1,1%</div>
       </div>
     </div>
   </div>
 
-  <!-- SYNTHESE -->
-  <div class="summary-block reveal">
-    <h2>Ce qu'un media buyer apporte à votre entreprise</h2>
-    <div class="summary-list">
-      <div class="s-item"><div class="s-dot">1</div><span><strong>Plus de résultats avec le même budget</strong> — en optimisant les audiences, les créatifs et les enchères, le même euro investi produit plus de leads ou de ventes.</span></div>
-      <div class="s-item"><div class="s-dot">2</div><span><strong>De la prévisibilité</strong> — vous connaissez votre CPA cible, votre ROAS attendu. Les campagnes deviennent un investissement prévisible, pas un pari.</span></div>
-      <div class="s-item"><div class="s-dot">3</div><span><strong>Du temps libéré</strong> — vous ne passez plus des heures dans Ads Manager à essayer de comprendre des outils complexes. Vous vous concentrez sur ce que vous faites bien.</span></div>
-      <div class="s-item"><div class="s-dot">4</div><span><strong>Une expertise dédiée</strong> — les règles de Meta changent en permanence. Un media buyer suit ces évolutions au quotidien. Vous bénéficiez de cette veille sans effort.</span></div>
-    </div>
-  </div>
-
-  <!-- CTA -->
   <div class="cta-strip reveal">
     <div>
-      <h3>Vous voulez savoir si Meta Ads peut marcher pour vous ?</h3>
-      <p>L'audit gratuit répond à cette question en 48h — sans engagement.</p>
+      <h3>Meta Ads peut-il marcher pour vous ?</h3>
+      <p>L'audit gratuit répond à cette question en 48h.</p>
     </div>
     <a href="/DG_MetaAds/contact.html" class="btn-white">🎯 Demander l'audit gratuit</a>
   </div>
